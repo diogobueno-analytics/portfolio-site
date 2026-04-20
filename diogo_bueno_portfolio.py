@@ -224,8 +224,63 @@ st.markdown("""
         display: flex;
         gap: 0.75rem;
         margin-top: 25px;
-    }       
-    </style>
+    }      
+    /* Container que organiza os grupos de skills em colunas */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+/* Estilo de cada "card" de grupo */
+    .skill-group {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .skill-group:hover {
+        transform: translateY(-5px);
+        border-color: #8B5CF6;
+        background: rgba(139, 92, 246, 0.05);
+    }
+
+    .skill-group-header {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .skill-group-title {
+        font-weight: 700;
+        color: #ffffff;
+        font-size: 1.1rem;
+    }
+
+    /* Organização das tags dentro do card */
+    .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .skill-tag {
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    /* Cores das Tags */
+    .tag-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa !important; border: 1px solid rgba(59, 130, 246, 0.2); }
+    .tag-green { background: rgba(16, 185, 129, 0.15); color: #34d399 !important; border: 1px solid rgba(16, 185, 129, 0.2); }
+    .tag-purple { background: rgba(139, 92, 246, 0.15); color: #a78bfa !important; border: 1px solid rgba(139, 92, 246, 0.2); }
+    .tag-orange { background: rgba(245, 158, 11, 0.15); color: #fbbf24 !important; border: 1px solid rgba(245, 158, 11, 0.2); } 
+        </style>
     """, unsafe_allow_html=True)
 
 # 3. Navegação
@@ -282,10 +337,69 @@ with aba_bio:
     st.markdown("""
     * **🔍 Inteligência:** Análises que identificam oportunidades e previnem riscos para o negócio.
     * **📊 Visualização de Dados:** Dashboards End-to-End: modelagem, visualização e storytelling para suporte à diretoria.
-    * **🤖 Automação de análises:** Otimização de rotinas de dados e automação de relatórios para ganho de escala.
+    * **⚙️ Automação de análises:** Otimização de rotinas de dados e automação de relatórios para ganho de escala.
     """)
     
     st.markdown('</div>', unsafe_allow_html=True)
+
+# ─── Skills ───
+    st.subheader("Skills/Habilidades")
+
+    st.markdown("""
+<div class="skills-grid">
+<div class="skill-group">
+<div class="skill-group-header">
+<span class="skill-group-icon">📊</span>
+<span class="skill-group-title">Business Intelligence</span>
+</div>
+<div class="skill-tags">
+<span class="skill-tag tag-blue">ETL</span>
+<span class="skill-tag tag-blue">Modelagem de Dados</span>
+<span class="skill-tag tag-blue">Storytelling</span>
+<span class="skill-tag tag-blue">Análise de Dados</span>
+<span class="skill-tag tag-blue">Dashboards</span>
+<span class="skill-tag tag-blue">KPIs</span>
+<span class="skill-tag tag-blue">Estatística Descritiva & +</span>
+<span class="skill-tag tag-blue">Planejamento Estratégico</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group-header">
+<span class="skill-group-icon">💻</span>
+<span class="skill-group-title">Linguagens</span>
+</div>
+<div class="skill-tags">
+<span class="skill-tag tag-green">SQL</span>
+<span class="skill-tag tag-green">DAX</span>
+<span class="skill-tag tag-green">Python</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group-header">
+<span class="skill-group-icon">🛠️</span>
+<span class="skill-group-title">Ferramentas</span>
+</div>
+<div class="skill-tags">
+<span class="skill-tag tag-purple">Power BI</span>
+<span class="skill-tag tag-purple">VS Code</span>                
+<span class="skill-tag tag-purple">Excel</span>
+<span class="skill-tag tag-purple">KNIME</span> 
+<span class="skill-tag tag-purple">PowerPoint</span>
+<span class="skill-tag tag-purple">Jira/Clickup/Trello</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group-header">
+<span class="skill-group-icon">🌐</span>
+<span class="skill-group-title">Idiomas</span>
+</div>
+<div class="skill-tags">
+<span class="skill-tag tag-orange">Inglês</span>
+<span class="skill-tag tag-orange">Italiano</span>
+</div>
+</div>
+</div>
+""", unsafe_allow_html=True)
 
 # As demais abas seguem o mesmo padrão de container para manter o menu no lugar
 with aba_ds:
@@ -294,7 +408,7 @@ with aba_ds:
     st.title("🧪 Projetos Data Science")
     st.markdown("Uma seleção de projetos de Data Science, criados em âmbito de estudos.")
     st.markdown("<br>", unsafe_allow_html=True)
-
+   
     # --- CSS Customizado para os Cards e Botões Roxos ---
     st.markdown("""
         <style>
