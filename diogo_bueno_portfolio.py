@@ -365,17 +365,6 @@ with aba_bio:
 </div>
 <div class="skill-group">
 <div class="skill-group-header">
-<span class="skill-group-icon">💻</span>
-<span class="skill-group-title">Linguagens</span>
-</div>
-<div class="skill-tags">
-<span class="skill-tag tag-green">SQL</span>
-<span class="skill-tag tag-green">DAX</span>
-<span class="skill-tag tag-green">Python</span>
-</div>
-</div>
-<div class="skill-group">
-<div class="skill-group-header">
 <span class="skill-group-icon">🛠️</span>
 <span class="skill-group-title">Ferramentas</span>
 </div>
@@ -386,7 +375,18 @@ with aba_bio:
 <span class="skill-tag tag-purple">KNIME</span> 
 <span class="skill-tag tag-purple">PowerPoint</span>
 <span class="skill-tag tag-purple">Jira/Clickup/Trello</span>
+</div>              
 </div>
+<div class="skill-group">
+<div class="skill-group-header">
+<span class="skill-group-icon">💻</span>
+<span class="skill-group-title">Linguagens</span>
+</div>
+<div class="skill-tags">
+<span class="skill-tag tag-green">SQL</span>
+<span class="skill-tag tag-green">DAX</span>
+<span class="skill-tag tag-green">Python</span>
+</div>    
 </div>
 <div class="skill-group">
 <div class="skill-group-header">
