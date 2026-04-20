@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Portfólio | BI & Data", layout="wide")
 
 # 2. CSS para Centralização Global e Alinhamento de Texto
-st.set_page_config(page_title="Seu Portfólio", layout="centered")
+st.set_page_config(page_title="Diogo Bueno - Portfólio", layout="centered")
 
 st.markdown("""
     <style>
@@ -125,6 +125,51 @@ st.markdown("""
     hr {
         border-color: #333333 !important;
     }
+            
+    /* Container do Título Principal */
+    .hero-container {
+        text-align: center;
+        padding: 20px 0;
+        margin-bottom: 2rem;
+    }
+
+    /* Nome Principal - GIGANTE */
+    .hero-name {
+        text-align: left !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 0.9 !important;
+    }
+
+    .hero-name .highlight {
+        /* Tamanho baseado na largura da tela para garantir que fique grande */
+        text-align: left !important;
+        margin-bottom: 0px !important; 
+        padding-bottom: 0px !important;
+        font-size: 3vw !important; 
+        font-weight: 900 !important;
+        letter-spacing: -3px !important;
+        
+        /* Efeito de Degradê */
+        background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        display: inline-block !important;
+    }
+
+    /* Subtítulo - MENOR e SEM degradê */
+    .hero-subtitle {
+        font-size: 1.5rem !important; /* Tamanho fixo menor */
+        margin-top: -10px !important;
+        color: #CCCCCC !important;    /* Cor sólida (cinza claro) */
+        font-weight: 400 !important;
+        margin-top: 10px !important;
+        display: block !important;
+        background: none !important;  /* Garante que não tenha degradê */
+        -webkit-text-fill-color: initial !important; /* Reseta a transparência */
+    }   
+    
     </style>
     """, unsafe_allow_html=True)
 
@@ -141,8 +186,16 @@ aba_bio, aba_ds, aba_pbi, aba_contato = st.tabs([
 with aba_bio:
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
     
-    st.title("Especialista em BI & Inteligência de Dados")
-    
+    st.markdown("""
+                <div style="text-align: left; width: 100%;">
+                    <h1 class="hero-name" style="margin-bottom: 0px !important; line-height: 0.8;">
+                        <span class="highlight">Diogo Bueno da Rosa</span>
+                    </h1>
+                    <p class="hero-subtitle" style="margin-top: 0px !important; padding-top: 0px;">
+                        Especialista em BI & Inteligência de Dados
+                    </p>
+                </div>
+                """, unsafe_allow_html=True)
     st.markdown("""
     Profissional com mais de **7 anos de experiência** em Planejamento e Business Intelligence em grandes empresas. 
     Especializado em transformar dados complexos em decisões estratégicas, atuando em todo o ciclo de BI: 
@@ -203,6 +256,7 @@ with aba_ds:
             -webkit-text-fill-color: #8B5CF6 !important; /* Força em navegadores Chrome/Safari */
             transform: scale(1.05) !important;
         }
+        
         </style>
     """, unsafe_allow_html=True)
 
