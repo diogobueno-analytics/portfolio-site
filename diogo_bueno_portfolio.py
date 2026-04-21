@@ -372,10 +372,6 @@ with aba_bio:
         .skills-grid {
             grid-template-columns: 1fr !important;
         }
-        .skill-group:last-child {
-            grid-column: 1 !important;
-            max-width: 100% !important;
-        }
     }
     </style>
     """, unsafe_allow_html=True)
