@@ -293,39 +293,44 @@ with aba_bio:
         border: 1px solid rgba(255, 255, 255, 0.2) !important;
         border-radius: 15px !important;
         padding: 1.5rem !important;
-        display: block !important;
+        display: grid !important;
         transition: all 0.3s ease !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-        margin-bottom: 1.5rem !important;
     }
+ 
     div.skill-group:hover {
         transform: translateY(-5px) !important;
         border-color: #8B5CF6 !important;
         background: #252525 !important;
         box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3) !important;
     }
+ 
     .skill-group-header {
         display: flex !important;
         align-items: center !important;
         gap: 0.8rem !important;
         margin-bottom: 1.2rem !important;
     }
+ 
     .skill-group-icon {
         font-size: 1.5rem !important;
         display: inline-block !important;
     }
+ 
     .skill-group-title {
         font-weight: 700 !important;
         color: #ffffff !important;
         font-size: 1.1rem !important;
         margin: 0 !important;
     }
+ 
     /* Organização das tags dentro do card */
     .skill-tags {
         display: flex !important;
         flex-wrap: wrap !important;
         gap: 0.6rem !important;
     }
+ 
     .skill-tag {
         padding: 0.4rem 0.8rem !important;
         border-radius: 6px !important;
@@ -334,39 +339,39 @@ with aba_bio:
         display: inline-block !important;
         white-space: nowrap !important;
     }
+ 
     /* Cores das Tags */
     .tag-blue { 
         background: rgba(59, 130, 246, 0.15) !important; 
         color: #60a5fa !important; 
         border: 1px solid rgba(59, 130, 246, 0.2) !important; 
     }
+ 
     .tag-green { 
         background: rgba(16, 185, 129, 0.15) !important; 
         color: #34d399 !important; 
         border: 1px solid rgba(16, 185, 129, 0.2) !important; 
     }
+ 
     .tag-purple { 
         background: rgba(139, 92, 246, 0.15) !important; 
         color: #a78bfa !important; 
         border: 1px solid rgba(139, 92, 246, 0.2) !important; 
     }
+ 
     .tag-orange { 
         background: rgba(245, 158, 11, 0.15) !important; 
         color: #fbbf24 !important; 
         border: 1px solid rgba(245, 158, 11, 0.2) !important; 
     }
+ 
     .skills-grid {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1.5rem !important;
         width: 100% !important;
     }
-    /* A última caixa fica em 1 coluna, pequena e centralizada */
-    .skill-group:last-child {
-        grid-column: 1 / -1 !important;
-        max-width: 400px !important;
-        margin: 0 auto !important;
-    }
+ 
     /* Responsivo para telas menores */
     @media (max-width: 768px) {
         .skills-grid {
@@ -434,7 +439,7 @@ with aba_bio:
             <span class="skill-tag tag-orange">Italiano</span>
         </div>
     </div>
-    </div>  
+    </div> 
     """, unsafe_allow_html=True)
 
 # As demais abas seguem o mesmo padrão de container para manter o menu no lugar
