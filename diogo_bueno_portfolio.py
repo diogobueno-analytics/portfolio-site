@@ -205,14 +205,7 @@ hr {
     display: flex;
     gap: 0.75rem;
     margin-top: 25px;
-}      
-/* Container que organiza os grupos de skills em colunas */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
+}  
 </style>
 """, unsafe_allow_html=True)
 
