@@ -289,6 +289,7 @@ with aba_bio:
         display: grid !important;
         transition: all 0.3s ease !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+        align-content: flex-start !important;
     }
  
     div.skill-group:hover {
@@ -322,6 +323,7 @@ with aba_bio:
         display: flex !important;
         flex-wrap: wrap !important;
         gap: 0.6rem !important;
+        align-content: flex-start !important;
     }
  
     .skill-tag {
@@ -337,25 +339,25 @@ with aba_bio:
     .tag-blue { 
         background: rgba(59, 130, 246, 0.15) !important; 
         color: #60a5fa !important; 
-        border: 1px solid rgba(59, 130, 246, 0.2) !important; 
+        border: 1px solid rgba(96, 165, 250, 0.2) !important; 
     }
  
     .tag-green { 
         background: rgba(16, 185, 129, 0.15) !important; 
         color: #34d399 !important; 
-        border: 1px solid rgba(16, 185, 129, 0.2) !important; 
+        border: 1px solid rgba(52, 211, 153, 0.2) !important; 
     }
  
     .tag-purple { 
         background: rgba(139, 92, 246, 0.15) !important; 
         color: #a78bfa !important; 
-        border: 1px solid rgba(139, 92, 246, 0.2) !important; 
+        border: 1px solid rgba(167, 139, 250, 0.2) !important; 
     }
  
     .tag-orange { 
         background: rgba(245, 158, 11, 0.15) !important; 
         color: #fbbf24 !important; 
-        border: 1px solid rgba(245, 158, 11, 0.2) !important; 
+        border: 1px solid rgba(251, 191, 36, 0.2) !important; 
     }
  
     .skills-grid {
@@ -394,7 +396,6 @@ with aba_bio:
             <span class="skill-tag tag-blue">Planejamento Estratégico</span>
         </div>
     </div>
- 
     <div class="skill-group">
         <div class="skill-group-header">
             <span class="skill-group-icon">🛠️</span>
@@ -409,7 +410,6 @@ with aba_bio:
             <span class="skill-tag tag-purple">Jira/Clickup/Trello</span>
         </div>              
     </div>
- 
     <div class="skill-group">
         <div class="skill-group-header">
             <span class="skill-group-icon">💻</span>
@@ -421,7 +421,6 @@ with aba_bio:
             <span class="skill-tag tag-green">Python</span>
         </div>    
     </div>
- 
     <div class="skill-group">
         <div class="skill-group-header">
             <span class="skill-group-icon">🌐</span>
