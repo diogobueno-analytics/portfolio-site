@@ -214,54 +214,52 @@ hr {
     margin-top: 2rem;
 }
 Estilo de cada "card" de grupo */
-    .skill-group {
-        background: #1e1e1e !important; 
-        border: 1px solid rgba(255, 255, 255, 0.6) !important;
-        border-radius: 12px;
-        padding: 1.5rem;
-        transition: all 0.3s ease;
-    }
-
-    .skill-group:hover {
-        transform: rgba(255, 255, 255, 0.2);
-        border-color: #8B5CF6;
-        background: rgba(139, 92, 246, 0.2);
-    }
-
-    .skill-group-header {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .skill-group-title {
-        font-weight: 700;
-        color: #ffffff;
-        font-size: 1.1rem;
-    }
-
-    /* Organização das tags dentro do card */
-    .skill-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.6rem;
-    }
-
-    .skill-tag {
-        padding: 0.4rem 0.8rem;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        font-weight: 500;
-    }
-
-    /* Cores das Tags */
-    .tag-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa !important; border: 1px solid rgba(59, 130, 246, 0.2); }
-    .tag-green { background: rgba(16, 185, 129, 0.15); color: #34d399 !important; border: 1px solid rgba(16, 185, 129, 0.2); }
-    .tag-purple { background: rgba(139, 92, 246, 0.15); color: #a78bfa !important; border: 1px solid rgba(139, 92, 246, 0.2); }
-    .tag-orange { background: rgba(245, 158, 11, 0.15); color: #fbbf24 !important; border: 1px solid rgba(245, 158, 11, 0.2); } 
-        </style>
-    """, unsafe_allow_html=True)
+.skill-group {
+    background: #1e1e1e !important; /* Cor sólida para não ser transparente */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    
+    /* ESTA É A LINHA QUE ARREDONDA A BORDA */
+    border-radius: 15px !important; 
+    
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+}
+.skill-group:hover {
+    transform: rgba(255, 255, 255, 0.2);
+    border-color: #8B5CF6;
+    background: rgba(139, 92, 246, 0.2);
+}
+.skill-group-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+}
+.skill-group-title {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+/* Organização das tags dentro do card */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+.skill-tag {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+/* Cores das Tags */
+.tag-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa !important; border: 1px solid rgba(59, 130, 246, 0.2); }
+.tag-green { background: rgba(16, 185, 129, 0.15); color: #34d399 !important; border: 1px solid rgba(16, 185, 129, 0.2); }
+.tag-purple { background: rgba(139, 92, 246, 0.15); color: #a78bfa !important; border: 1px solid rgba(139, 92, 246, 0.2); }
+.tag-orange { background: rgba(245, 158, 11, 0.15); color: #fbbf24 !important; border: 1px solid rgba(245, 158, 11, 0.2); } 
+    </style>
+""", unsafe_allow_html=True)
 
 # 3. Navegação
 #👤🧪📊📩
