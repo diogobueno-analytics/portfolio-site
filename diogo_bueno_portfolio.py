@@ -373,6 +373,25 @@ with aba_bio:
             grid-template-columns: 1fr !important;
         }
     }
+    /* Business Intelligence - Azul */
+    .skill-group:nth-child(1) {
+        border-color: rgb(96, 165, 250) !important;
+    }
+
+    /* Ferramentas - Purple */
+    .skill-group:nth-child(2) {
+        border-color: rgb(167, 139, 250) !important;
+    }
+
+    /* Linguagens - Verde */
+    .skill-group:nth-child(3) {
+        border-color: rgb(52, 211, 153) !important;
+    }
+
+    /* Idiomas - Orange */
+    .skill-group:nth-child(4) {
+        border-color: rgb(251, 191, 36) !important;
+    }                
     </style>
     """, unsafe_allow_html=True)
 
