@@ -513,6 +513,11 @@ with aba_contato:
 
     st.markdown("""
     <style>
+    /*Ajuste da barra superior "Deploy" 
+    [data-testid="stHeader"] {
+        background-color: rgba(0,0,0,0) !important;
+    }                
+                
     /* ── Contact ── */
     .contact-grid {
         display: grid;
