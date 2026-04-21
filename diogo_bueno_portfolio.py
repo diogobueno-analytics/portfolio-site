@@ -25,216 +25,195 @@ link_curriculo = gerar_link_pdf(curriculo_pdf, "Baixar meu currículo")
 st.set_page_config(page_title="Diogo Bueno - Portfólio", layout="centered")
 
 st.markdown("""
-    <style>
-    /* 1. RESET DE VARIÁVEIS E LARGURA CENTRAL */
-    :root {
-        --max-width: 800px; /* Altere para 700px se quiser MAIS espaço nas laterais */
-    }
+<style>
+/* 1. RESET DE VARIÁVEIS E LARGURA CENTRAL */
+:root {
+    --max-width: 800px; /* Altere para 700px se quiser MAIS espaço nas laterais */
+}
+/* Força o container principal a centralizar e respeitar a largura */
+[data-testid="stAppViewBlockContainer"] {
+    max-width: var(--max-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    padding-top: 3rem !important;
+}
+/* 2. FUNDO E CORES GERAIS */
+.stApp {
+    background-color: #0A0A0A;
+}
+h1, h2, h3 {
+    color: #8B5CF6 !important;
+    text-align: center;
+    margin-bottom: 20px !important;
+}
 
-    /* Força o container principal a centralizar e respeitar a largura */
-    [data-testid="stAppViewBlockContainer"] {
-        max-width: var(--max-width) !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        padding-left: 2rem !important;
-        padding-right: 2rem !important;
-        padding-top: 3rem !important;
-    }
+p, span, li {
+    color: #F5F5F5 !important;
+    font-size: 18px !important;
+    line-height: 1.8;
+}
+/* 3. CENTRALIZAÇÃO E ESTILO DAS ABAS */
+/* Estilização Moderna das Abas (Navegação) */
+div[data-testid="stTabs"] [role="tablist"] {
+    background-color: #1A1A1A !important; /* Fundo do menu ligeiramente mais claro que o site */
+    padding: 8px !important;
+    border-radius: 50px !important; /* Formato de pílula */
+    border: 1px solid #333333 !important;
+    margin-bottom: 30px !important;
+    gap: 10px !important;
+}
+button[data-baseweb="tab"] {
+    border-radius: 40px !important; /* Botões internos arredondados */
+    padding: 10px 25px !important;   
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: none !important;
+    background-color: transparent !important;
+}
+/* Aba Selecionada (Destaque) */
+button[data-baseweb="tab"][aria-selected="true"] {
+    background-color: #FFFFFF !important; /* Roxo vibrante */
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important; /* Brilho suave */
+}
+button[data-baseweb="tab"][aria-selected="true"] p {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+}
+/* Efeito de Hover nas Abas */
+button[data-baseweb="tab"]:hover {
+    background-color: rgba(139, 92, 246, 0.1) !important;
+    transform: translateY(-2px) !important; /* Leve subida */
+}
+/* Remove a linha original do Streamlit que fica embaixo */
+div[data-baseweb="tab-highlight"] {
+    display: none !important;
+}
+button[data-baseweb="tab"] {
+    color: #FFFFFF !important;
+    font-size: 18px !important;
+    background-color: transparent !important;
+}
 
-    /* 2. FUNDO E CORES GERAIS */
-    .stApp {
-        background-color: #0A0A0A;
-    }
-
-    h1, h2, h3 {
-        color: #8B5CF6 !important;
-        text-align: center;
-        margin-bottom: 20px !important;
-    }
-    
-    p, span, li {
-        color: #F5F5F5 !important;
-        font-size: 18px !important;
-        line-height: 1.8;
-    }
-
-    /* 3. CENTRALIZAÇÃO E ESTILO DAS ABAS */
-    /* Estilização Moderna das Abas (Navegação) */
-    div[data-testid="stTabs"] [role="tablist"] {
-        background-color: #1A1A1A !important; /* Fundo do menu ligeiramente mais claro que o site */
-        padding: 8px !important;
-        border-radius: 50px !important; /* Formato de pílula */
-        border: 1px solid #333333 !important;
-        margin-bottom: 30px !important;
-        gap: 10px !important;
-    }
-
-    button[data-baseweb="tab"] {
-        border-radius: 40px !important; /* Botões internos arredondados */
-        padding: 10px 25px !important;   
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        border: none !important;
-        background-color: transparent !important;
-    }
-
-    /* Aba Selecionada (Destaque) */
-    button[data-baseweb="tab"][aria-selected="true"] {
-        background-color: #FFFFFF !important; /* Roxo vibrante */
-        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important; /* Brilho suave */
-    }
-
-    button[data-baseweb="tab"][aria-selected="true"] p {
-        color: #FFFFFF !important;
-        font-weight: 600 !important;
-    }
-
-    /* Efeito de Hover nas Abas */
-    button[data-baseweb="tab"]:hover {
-        background-color: rgba(139, 92, 246, 0.1) !important;
-        transform: translateY(-2px) !important; /* Leve subida */
-    }
-
-    /* Remove a linha original do Streamlit que fica embaixo */
-    div[data-baseweb="tab-highlight"] {
-        display: none !important;
-    }
-
-    button[data-baseweb="tab"] {
-        color: #FFFFFF !important;
-        font-size: 18px !important;
-        background-color: transparent !important;
-    }
-    
-    button[data-baseweb="tab"][aria-selected="true"] p {
-        color: #8B5CF6 !important;
-        font-weight: bold !important;
-    }
-
-    div[data-baseweb="tab-highlight"] {
-        background-color: #8B5CF6 !important;
-    }
-
-    /* 4. BOTÕES: ESTADO NORMAL E HOVER (LETRA ROXA) */
-    div.stButton > button, div.stLinkButton > a {
-        background-color: #8B5CF6 !important;
-        color: #FFFFFF !important;
-        border: none !important;
-        padding: 10px 20px !important;
-        border-radius: 8px !important;
-        transition: all 0.3s ease !important;
-        font-weight: bold !important;
-        text-decoration: none !important;
-        width: 100%;
-        display: block;
-        text-align: center;
-    }
-
-    /* O ajuste que você pediu: Fundo branco e Letra Roxa ao passar o mouse */
-    div.stButton > button:hover, 
-    div.stLinkButton > a:hover,
-    div.stLinkButton > a:hover p {
-        background-color: #FFFFFF !important;
-        color: #8B5CF6 !important;
-        -webkit-text-fill-color: #8B5CF6 !important;
-        transform: scale(1.02) !important;
-    }
-
-    /* Divisor */
-    hr {
-        border-color: #333333 !important;
-    }
-            
-    /* Container do Título Principal */
-    .hero-container {
-        text-align: center;
-        padding: 20px 0;
-        margin-bottom: 2rem;
-    }
-
-    /* Nome Principal - GIGANTE */
-    .hero-name {
-        text-align: left !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        line-height: 0.9 !important;
-    }
-
-    .hero-name .highlight {
-        /* Tamanho baseado na largura da tela para garantir que fique grande */
-        text-align: left !important;
-        margin-bottom: 0px !important; 
-        padding-bottom: 0px !important;
-        font-size: 3vw !important; 
-        font-weight: 900 !important;
-        letter-spacing: -3px !important;
+button[data-baseweb="tab"][aria-selected="true"] p {
+    color: #8B5CF6 !important;
+    font-weight: bold !important;
+}
+div[data-baseweb="tab-highlight"] {
+    background-color: #8B5CF6 !important;
+}
+/* 4. BOTÕES: ESTADO NORMAL E HOVER (LETRA ROXA) */
+div.stButton > button, div.stLinkButton > a {
+    background-color: #8B5CF6 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+/* O ajuste que você pediu: Fundo branco e Letra Roxa ao passar o mouse */
+div.stButton > button:hover, 
+div.stLinkButton > a:hover,
+div.stLinkButton > a:hover p {
+    background-color: #FFFFFF !important;
+    color: #8B5CF6 !important;
+    -webkit-text-fill-color: #8B5CF6 !important;
+    transform: scale(1.02) !important;
+}
+/* Divisor */
+hr {
+    border-color: #333333 !important;
+}
         
-        /* Efeito de Degradê */
-        background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        background-clip: text !important;
-        display: inline-block !important;
-    }
-
-    /* Subtítulo - MENOR e SEM degradê */
-    .hero-subtitle {
-        font-size: 1.3rem !important; /* Tamanho fixo menor */
-        margin-top: -10px !important;
-        color: #CCCCCC !important;    /* Cor sólida (cinza claro) */
-        font-weight: 400 !important;
-        margin-top: 10px !important;
-        display: block !important;
-        background: none !important;  /* Garante que não tenha degradê */
-        -webkit-text-fill-color: initial !important; /* Reseta a transparência */
-    }   
+/* Container do Título Principal */
+.hero-container {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 2rem;
+}
+/* Nome Principal - GIGANTE */
+.hero-name {
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0.9 !important;
+}
+.hero-name .highlight {
+    /* Tamanho baseado na largura da tela para garantir que fique grande */
+    text-align: left !important;
+    margin-bottom: 0px !important; 
+    padding-bottom: 0px !important;
+    font-size: 3vw !important; 
+    font-weight: 900 !important;
+    letter-spacing: -3px !important;
     
-    /* Botões - Quem sou eu */
-    :root {
-    --accent: #8B5CF6;
-    --radius-sm: 8px;
-    --glass: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    }
+    /* Efeito de Degradê */
+    background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    display: inline-block !important;
+}
+/* Subtítulo - MENOR e SEM degradê */
+.hero-subtitle {
+    font-size: 1.3rem !important; /* Tamanho fixo menor */
+    margin-top: -10px !important;
+    color: #CCCCCC !important;    /* Cor sólida (cinza claro) */
+    font-weight: 400 !important;
+    margin-top: 10px !important;
+    display: block !important;
+    background: none !important;  /* Garante que não tenha degradê */
+    -webkit-text-fill-color: initial !important; /* Reseta a transparência */
+}   
 
-    .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        padding: 0.75rem 1.6rem;
-        /* Usei o seu roxo no gradiente */
-        background: linear-gradient(135deg, #8B5CF6 0%, #4299e1 100%);
-        color: white !important; /* Cor do texto */
-        border-radius: var(--radius-sm);
-        font-size: 0.875rem;
-        font-weight: 700;
-        text-decoration: none !important;
-        transition: all 0.25s;
-        box-shadow: 0 0 20px rgba(139, 92, 246, 0.35);
-        letter-spacing: 0.2px;
-        border: none;
-    }
-
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 0 30px rgba(139, 92, 246, 0.55);
-        color: white !important;
-        text-decoration: none;
-    }
-
-    .hero-cta {
-        display: flex;
-        gap: 0.75rem;
-        margin-top: 25px;
-    }      
-    /* Container que organiza os grupos de skills em colunas */
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
-
-/* Estilo de cada "card" de grupo */
+/* Botões - Quem sou eu */
+:root {
+--accent: #8B5CF6;
+--radius-sm: 8px;
+--glass: rgba(255, 255, 255, 0.05);
+--glass-border: rgba(255, 255, 255, 0.1);
+}
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.75rem 1.6rem;
+    /* Usei o seu roxo no gradiente */
+    background: linear-gradient(135deg, #8B5CF6 0%, #4299e1 100%);
+    color: white !important; /* Cor do texto */
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: all 0.25s;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.35);
+    letter-spacing: 0.2px;
+    border: none;
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.55);
+    color: white !important;
+    text-decoration: none;
+}
+.hero-cta {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 25px;
+}      
+/* Container que organiza os grupos de skills em colunas */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+Estilo de cada "card" de grupo */
     .skill-group {
         background: rgba(255, 255, 255, 0.08);
         border: 1px solid rgba(255, 255, 255, 0.2);
