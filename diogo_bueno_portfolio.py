@@ -374,22 +374,22 @@ with aba_bio:
         }
     }
     /* Business Intelligence - Azul */
-    .skill-group:nth-child(1) {
+    .skill-group:nth-child(1):hover {
         border-color: rgb(96, 165, 250) !important;
     }
 
     /* Ferramentas - Purple */
-    .skill-group:nth-child(2) {
+    .skill-group:nth-child(2):hover {
         border-color: rgb(167, 139, 250) !important;
     }
 
     /* Linguagens - Verde */
-    .skill-group:nth-child(3) {
+    .skill-group:nth-child(3):hover {
         border-color: rgb(52, 211, 153) !important;
     }
 
     /* Idiomas - Orange */
-    .skill-group:nth-child(4) {
+    .skill-group:nth-child(4):hover {
         border-color: rgb(251, 191, 36) !important;
     }                
     </style>
