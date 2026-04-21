@@ -395,7 +395,6 @@ with aba_bio:
                 <span class="skill-tag tag-blue">Planejamento Estratégico</span>
             </div>
         </div>
-    
         <div class="skill-group">
             <div class="skill-group-header">
                 <span class="skill-group-icon">🛠️</span>
@@ -410,7 +409,6 @@ with aba_bio:
                 <span class="skill-tag tag-purple">Jira/Clickup/Trello</span>
             </div>              
         </div>
-    
         <div class="skill-group">
             <div class="skill-group-header">
                 <span class="skill-group-icon">💻</span>
@@ -422,7 +420,6 @@ with aba_bio:
                 <span class="skill-tag tag-green">Python</span>
             </div>    
         </div>
-    
         <div class="skill-group">
             <div class="skill-group-header">
                 <span class="skill-group-icon">🌐</span>
