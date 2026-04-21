@@ -275,6 +275,21 @@ aba_bio, aba_ds, aba_pbi, aba_contato = st.tabs([
 # 4. Conteúdo
 with aba_bio:
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
+    
+    st.markdown("""
+    <div style="text-align: left; width: 100%;">
+        <h1 class="hero-name" style="margin-bottom: 0px !important; line-height: 0.8;">
+            <span class="highlight">Diogo Bueno da Rosa</span>
+        </h1>
+        <div class="hero-subtitle" style="margin-top: 5px !important;">
+            // Analista de Business Intelligence | Especialista em Dados
+        </div>
+        <div class="hero-subtitle" style="margin-top: 0px !important;">
+            Estratégia · Performance · Governança
+        </div>
+    </div>
+    <br>
+    """, unsafe_allow_html=True)
 
     st.markdown("""
     Profissional com mais de **7 anos de experiência** em Planejamento e Business Intelligence em grandes empresas. 
