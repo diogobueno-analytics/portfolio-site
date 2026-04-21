@@ -214,21 +214,22 @@ hr {
     margin-top: 2rem;
 }
 Estilo de cada "card" de grupo */
-.skill-group {
-    background: #1e1e1e !important; /* Cor sólida para não ser transparente */
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    
-    /* ESTA É A LINHA QUE ARREDONDA A BORDA */
-    border-radius: 15px !important; 
-    
-    padding: 1.5rem;
+div.skill-group {
+    background-color: #1e1e1e !important;
+    background: #1e1e1e !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 15px !important;
+    padding: 1.5rem !important;
+    display: block !important;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
 }
-.skill-group:hover {
-    transform: rgba(255, 255, 255, 0.2);
-    border-color: #8B5CF6;
-    background: rgba(139, 92, 246, 0.2);
+
+/* O hover você disse que funciona, então mantemos a lógica */
+div.skill-group:hover {
+    transform: translateY(-5px);
+    border-color: #8B5CF6 !important;
+    background: #252525 !important;
 }
 .skill-group-header {
     display: flex;
