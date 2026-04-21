@@ -1,6 +1,7 @@
 import streamlit as st
 import base64
 import os
+from PIL import Image
 
 # 1. Configuração da página
 st.set_page_config(page_title="Portfólio | BI & Data", layout="wide")
@@ -295,7 +296,7 @@ aba_bio, aba_ds, aba_pbi, aba_contato = st.tabs([
 # 4. Conteúdo
 with aba_bio:
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
-    
+
     st.markdown("""
                 <div style="text-align: left; width: 100%;">
                     <h1 class="hero-name" style="margin-bottom: 0px !important; line-height: 0.8;">
@@ -305,11 +306,12 @@ with aba_bio:
                         // Analista de Business Intelligence | Especialista em Dados
                     </div>
                     <div class="hero-subtitle" style="margin-top: 0px !important;">
-                           Estratégia · Performance · Governança
+                        Estratégia · Performance · Governança
                     </div>
                 </div>
                 <br>
                 """, unsafe_allow_html=True)
+
     st.markdown("""
     Profissional com mais de **7 anos de experiência** em Planejamento e Business Intelligence em grandes empresas. 
     Especializado em transformar dados complexos em decisões estratégicas, atuando em todo o ciclo de BI: 
@@ -508,45 +510,86 @@ with aba_contato:
         Se você tem interesse em discutir projetos de dados, oportunidades de colaboração 
         ou quer trocar ideias e experiências, sinta-se à vontade para se conectar comigo!
     """)
-    
+
+    st.markdown("""
+    <style>
+    /* ── Contact ── */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.85rem;
+    }
+    .contact-card {
+        background: rgba(30, 41, 59, 0.5);
+        border: 1px solid rgba(51, 65, 85, 1);
+        border-radius: 15px;
+        padding: 1.5rem 1.25rem;
+        text-align: center;
+        transition: all 0.25s;
+        backdrop-filter: var(--blur);
+    }
+    .contact-card:hover {
+        border-color: v#8B5CF6;
+        background: rgba(139, 92, 246, 0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 20px var(--accent-glow);
+    }
+    .contact-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+    .contact-label {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+    .contact-value {
+        color: #FFFFFF;
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-top: 0.2rem;
+    }
+    .contact-value a { color: #FFFFFF; text-decoration: none; }
+    .contact-value a:hover { color: #8B5CF6; }
+    </style>    
+        """, unsafe_allow_html=True) 
+
     st.markdown("<br>", unsafe_allow_html=True)
 
     # Criando colunas para os botões de contato ficarem lado a lado
-    col_ln, col_gh = st.columns(2)
+    #col_ln, col_gh = st.columns(2)
 
-    with col_ln:
-        st.markdown("""
-            <div style="text-align: center;">
-                <p>Para falarmos via LinkedIn:</p>
-            </div>
-        """, unsafe_allow_html=True)
-        st.markdown("""
-            <div class="hero-cta" style="width: 100%;">
-                <a href="https://www.linkedin.com/in/diogobuenodarosa/" target="_blank" class="btn-primary" style="width: 100%; justify-content: center;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    Acessar meu LinkedIn
-                </a>
-            </div>
-        """, unsafe_allow_html=True)
-    with col_gh:
-        st.markdown("""
-            <div style="text-align: center;">
-                <p>Para falarmos via E-mail:</p>
-            </div>
-        """, unsafe_allow_html=True)
-        st.markdown("""
-                <div class="hero-cta" style="width: 100%;">
-                    <a href="mailto:adm.diogobueno@gmail.com" class="btn-primary" style="width: 100%; justify-content: center;">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        Me mande um e-mail
-                    </a>
+    st.markdown("""
+            <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value">
+                    <a href="mailto:adm.diogobueno@gmail.com">adm.diogobueno@gmail.com</a>
                 </div>
-            """, unsafe_allow_html=True)
-
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">💼</div>
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-value">
+                    <a href="https://www.linkedin.com/in/diogobuenodarosa/" target="_blank">Diogo Bueno</a>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">🐙</div>
+                <div class="contact-label">GitHub</div>
+                <div class="contact-value">
+                    <a href="https://github.com/diogobueno-analytics" target="_blank">diogobueno-analytics</a>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <div class="contact-label">Localização</div>
+                <div class="contact-value">Curitiba, Paraná</div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
     st.divider()
 
     # Rodapé simples
