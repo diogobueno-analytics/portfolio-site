@@ -215,8 +215,8 @@ hr {
 }
 Estilo de cada "card" de grupo */
     .skill-group {
-        background: rgba(255, 255, 255, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.5);
         border-radius: 12px;
         padding: 1.5rem;
         transition: all 0.3s ease;
