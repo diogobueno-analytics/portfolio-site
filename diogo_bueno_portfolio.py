@@ -216,16 +216,16 @@ hr {
 Estilo de cada "card" de grupo */
     .skill-group {
         background: #1e1e1e !important; 
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.6) !important;
         border-radius: 12px;
         padding: 1.5rem;
         transition: all 0.3s ease;
     }
 
     .skill-group:hover {
-        transform: rgba(255, 255, 255, 0.15);
+        transform: rgba(255, 255, 255, 0.2);
         border-color: #8B5CF6;
-        background: rgba(139, 92, 246, 0.05);
+        background: rgba(139, 92, 246, 0.2);
     }
 
     .skill-group-header {
