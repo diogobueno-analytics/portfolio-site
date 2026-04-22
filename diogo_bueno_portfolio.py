@@ -228,13 +228,26 @@ with aba_bio:
     
     st.markdown("""
     <div style="text-align: left; width: 100%;">
-        <div class="hero-name" style="margin-bottom: 0px !important;">
-            <span class="highlight">Diogo Bueno da Rosa</span>
+        <div style="
+            font-size: 4rem !important;
+            font-weight: 900 !important;
+            line-height: 0.95 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        ">
+            <span style="
+                background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                display: inline-block;
+                letter-spacing: -1px;
+            ">Diogo Bueno da Rosa</span>
         </div>
-        <div class="hero-subtitle" style="margin-top: 5px !important;">
+        <div style="font-size: 1.1rem; color: #CCCCCC; margin-top: 10px;">
             // Analista de Business Intelligence | Especialista em Dados
         </div>
-        <div class="hero-subtitle" style="margin-top: 0px !important;">
+        <div style="font-size: 1.1rem; color: #CCCCCC; margin-top: 0px;">
             Estratégia · Performance · Governança
         </div>
     </div>
