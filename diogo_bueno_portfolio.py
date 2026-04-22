@@ -141,7 +141,11 @@ hr {
     text-align: left !important;
     margin: 0 !important;
     padding: 0 !important;
-    line-height: 0.9 !important;
+    /* Usamos clamp para o tamanho ser dinâmico: 
+       Mínimo 2.5rem, Ideal 8% da largura da tela, Máximo 4.5rem */
+    font-size: clamp(2.5rem, 8vw, 4.5rem) !important;
+    line-height: 1.1 !important; /* Aumentado levemente para evitar cortes no mobile */
+    font-weight: 800 !important;
 }
 .hero-name .highlight {
     /* Tamanho baseado na largura da tela para garantir que fique grande */
@@ -161,15 +165,8 @@ hr {
 }
 /* Subtítulo - MENOR e SEM degradê */
 .hero-subtitle {
-    font-size: 1.3rem !important; /* Tamanho fixo menor */
-    margin-top: -10px !important;
-    color: #CCCCCC !important;    /* Cor sólida (cinza claro) */
-    font-weight: 400 !important;
-    margin-top: 10px !important;
-    display: block !important;
-    background: none !important;  /* Garante que não tenha degradê */
-    -webkit-text-fill-color: initial !important; /* Reseta a transparência */
-}   
+        font-size: 0.9rem !important; /* Ajusta os subtítulos para não quebrarem feio */
+    }   
 
 /* Botões - Quem sou eu */
 :root {
@@ -361,17 +358,16 @@ with aba_bio:
     }
  
     .skills-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 1.5rem !important;
-        width: 100% !important;
+        grid-template-columns: 1fr !important;
     }
  
     /* Responsivo para telas menores */
     @media (max-width: 768px) {
-        .skills-grid {
-            grid-template-columns: 1fr !important;
-        }
+    .hero-name {
+        /* Garante que no celular o nome tenha um tamanho de leitura confortável */
+        font-size: 2.8rem !important; 
+        line-height: 1.1 !important;
+        margin-bottom: 10px !important;
     }
     /* Business Intelligence - Azul */
     .skill-group:nth-child(1):hover {
