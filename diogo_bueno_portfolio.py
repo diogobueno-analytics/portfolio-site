@@ -173,6 +173,9 @@ hr {
             font-size: 1.1rem !important;
             margin-top: 10px !important;
         }
+        .skills-grid {
+            grid-template-columns: 1fr !important;
+        }
     }
 /* Botões - Quem sou eu */
 :root {
@@ -364,7 +367,11 @@ with aba_bio:
     }
  
     .skills-grid {
-        grid-template-columns: 1fr !important;
+        display: grid !important;
+    /* Aqui definimos duas colunas de tamanho igual */
+        grid-template-columns: 1fr 1fr !important; 
+        gap: 20px !important;
+        width: 100% !important;
     }
                 
     /* Business Intelligence - Azul */
