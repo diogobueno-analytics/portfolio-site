@@ -244,10 +244,10 @@ with aba_bio:
                 letter-spacing: -1px;
             ">Diogo Bueno da Rosa</span>
         </div>
-        <div style="font-size: 1.1rem; color: #CCCCCC; margin-top: 10px;">
+        <div style="font-size: 1rem; color: #CCCCCC; margin-top: 10px;">
             // Analista de Business Intelligence | Especialista em Dados
         </div>
-        <div style="font-size: 1.1rem; color: #CCCCCC; margin-top: 0px;">
+        <div style="font-size: 1rem; color: #CCCCCC; margin-top: 0px;">
             Estratégia · Performance · Governança
         </div>
     </div>
