@@ -142,12 +142,15 @@ hr {
     text-align: left !important;
     margin: 0;
     padding: 0;
-    /* No desktop, mantemos o clamp elegante */
-    font-size: clamp(7rem, 10vw, 10rem); 
     line-height: 0.95;
     font-weight: 900;
 }
-
+h1.hero-name {
+    font-size: 8rem !important;
+    text-align: left !important;
+    color: inherit !important;
+    margin-bottom: 0 !important;
+}
 .hero-name .highlight {
     font-size: inherit;
     display: inline-block;
@@ -285,11 +288,6 @@ with aba_bio:
 # ─── Skills ───
     st.markdown("""
     <style>
-    h1 {
-        font-size: 8rem !important;
-        line-height: 0.95 !important;
-        font-weight: 900 !important;
-    }
     /* Reset dos estilos padrão do Streamlit */
     div.skill-group {
         background-color: #1e1e1e !important;
