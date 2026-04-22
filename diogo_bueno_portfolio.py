@@ -30,7 +30,15 @@ st.markdown("""
 :root {
     --max-width: 800px; /* Altere para 700px se quiser MAIS espaço nas laterais */
 }
-
+/* Força o container principal a centralizar e respeitar a largura */
+[data-testid="stAppViewBlockContainer"] {
+    max-width: var(--max-width) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    padding-top: 3rem !important;
+}
 /* 2. FUNDO E CORES GERAIS */
 .stApp {
     background-color: #0A0A0A;
@@ -130,13 +138,12 @@ hr {
 }
 /* Nome Principal - GIGANTE */
 .hero-name {
-    color: inherit !important;
     text-align: left !important;
-    margin: 0;
-    padding: 0;
-    line-height: 0.95;
-    font-weight: 900;
-    font-size: 8rem !important;        
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 8rem !important;  /* Fixo em 8rem no desktop */
+    line-height: 0.95 !important;
+    font-weight: 900 !important;
 }
 .hero-name .highlight {
     font-size: inherit;
@@ -355,18 +362,15 @@ with aba_bio:
  
     /* Responsivo para telas menores */
     /* Ajuste fino para celular */
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
         .hero-name {
-            /* Forçamos um tamanho fixo que "grite" na tela do celular */
-            /* 4rem é cerca de 64px, o que é bem grande para um celular */
-            font-size: 5rem !important; 
-            line-height: 0.9;
-            letter-spacing: -2px;
+            font-size: 3rem !important; 
+            line-height: 0.9 !important;
+            letter-spacing: -2px !important;
         }
         .hero-subtitle {
-            /* Aumentamos um pouco o subtítulo também para acompanhar o peso do nome */
-            font-size: 1.1rem;
-            margin-top: 10px;
+            font-size: 1.1rem !important;
+            margin-top: 10px !important;
         }
     }
     /* Business Intelligence - Azul */
