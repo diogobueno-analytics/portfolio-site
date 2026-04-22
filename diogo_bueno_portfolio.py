@@ -4,7 +4,8 @@ import os
 from PIL import Image
 
 # 1. Configuração da página
-st.set_page_config(page_title="Portfólio | BI & Data", layout="wide")
+#st.set_page_config(page_title="Portfólio | BI & Data", layout="wide")
+st.set_page_config(page_title="Diogo Bueno - Portfólio", layout="centered")
 
 # ─── Curriculo Download Helper ───
 curriculo_pdf = "Diogo Bueno - Currículo.pdf"
@@ -21,9 +22,7 @@ def gerar_link_pdf(caminho, texto_link):
 
 link_curriculo = gerar_link_pdf(curriculo_pdf, "Baixar meu currículo")
 
-# 2. CSS para Centralização Global e Alinhamento de Texto
-st.set_page_config(page_title="Diogo Bueno - Portfólio", layout="centered")
-
+# Markdown configurando classes CSS
 st.markdown("""
 <style>
 /* 1. RESET DE VARIÁVEIS E LARGURA CENTRAL */
