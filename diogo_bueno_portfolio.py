@@ -141,23 +141,19 @@ hr {
     text-align: left !important;
     margin: 0 !important;
     padding: 0 !important;
-    /* O clamp agora vai mandar no tamanho real do texto */
-    font-size: clamp(2.5rem, 7vw, 4.5rem) !important; 
-    line-height: 1.1 !important;
-    font-weight: 800 !important;
-}
-.hero-name .highlight {
-    /* REMOVIDO: font-size e letter-spacing que quebravam o mobile */
-    text-align: left !important;
-    margin-bottom: 0px !important; 
-    padding-bottom: 0px !important;
+    /* No desktop, mantemos o clamp elegante */
+    font-size: clamp(3rem, 10vw, 5rem) !important; 
+    line-height: 0.95 !important;
     font-weight: 900 !important;
-    /* Efeito de Degradê (Mantido) */
+}
+
+.hero-name .highlight {
+    font-size: inherit !important;
+    display: inline-block !important;
+    letter-spacing: -1px !important;
     background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    display: inline-block !important;
 }
 /* Subtítulo - MENOR e SEM degradê */
 .hero-subtitle {
@@ -366,10 +362,18 @@ with aba_bio:
  
     /* Responsivo para telas menores */
     /* Ajuste fino para celular */
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
         .hero-name {
-            /* No celular, forçamos um tamanho fixo robusto se o clamp ainda parecer pequeno */
-            font-size: 2.5rem !important; 
+            /* Forçamos um tamanho fixo que "grite" na tela do celular */
+            /* 4rem é cerca de 64px, o que é bem grande para um celular */
+            font-size: 4.2rem !important; 
+            line-height: 0.9 !important;
+            letter-spacing: -2px !important;
+        }
+        .hero-subtitle {
+            /* Aumentamos um pouco o subtítulo também para acompanhar o peso do nome */
+            font-size: 1.1rem !important;
+            margin-top: 10px !important;
         }
     }
     /* Business Intelligence - Azul */
