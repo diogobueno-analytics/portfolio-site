@@ -22,7 +22,8 @@ def gerar_link_pdf(caminho, texto_link):
 link_curriculo = gerar_link_pdf(curriculo_pdf, "Baixar meu currículo")
 
 # 2. CSS para Centralização Global e Alinhamento de Texto
-st.set_page_config(page_title="Diogo Bueno - Portfólio", layout="centered")
+#st.set_page_config(page_title="Diogo Bueno - Portfólio", layout="centered")
+st.set_page_config(page_title="Portfólio | BI & Data", layout="wide")
 
 st.markdown("""
 <style>
@@ -226,8 +227,8 @@ with aba_bio:
     
     st.markdown("""
     <div style="text-align: left; width: 100%;">
-        <h1 style="font-size: 8rem !important; text-align: left !important; margin: 0 !important; padding: 0 !important; line-height: 0.95 !important; font-weight: 900 !important; color: transparent; background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-            Diogo Bueno da Rosa
+        <h1 class="hero-name" style="margin-bottom: 0px !important; line-height: 0.8; font-size: 8rem !important;">
+            <span class="highlight">Diogo Bueno da Rosa</span>
         </h1>
         <div class="hero-subtitle" style="margin-top: 5px !important;">
             // Analista de Business Intelligence | Especialista em Dados
@@ -238,7 +239,7 @@ with aba_bio:
     </div>
     <br>
     """, unsafe_allow_html=True)
-
+    
     st.markdown("""
     Profissional com mais de **7 anos de experiência** em Planejamento e Business Intelligence em grandes empresas. 
     Especializado em transformar dados complexos em decisões estratégicas, atuando em todo o ciclo de BI: 
