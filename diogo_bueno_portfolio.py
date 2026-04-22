@@ -145,12 +145,7 @@ hr {
     padding: 0;
     line-height: 0.95;
     font-weight: 900;
-}
-h1.hero-name {
-    font-size: 8rem !important;
-    text-align: left !important;
-    color: inherit !important;
-    margin-bottom: 0 !important;
+    font-size: 8rem !important;        
 }
 .hero-name .highlight {
     font-size: inherit;
