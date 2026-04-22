@@ -141,12 +141,11 @@ hr {
     text-align: left !important;
     margin: 0 !important;
     padding: 0 !important;
-    font-size: 8rem !important;  /* Fixo em 8rem no desktop */
+    font-size: 50px;  /* Fixo em 8rem no desktop */
     line-height: 0.95 !important;
     font-weight: 900 !important;
 }
 .hero-name .highlight {
-    font-size: inherit;
     display: inline-block;
     letter-spacing: -1px;
     background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%) !important;
@@ -220,7 +219,7 @@ with aba_bio:
     
     st.markdown("""
     <div style="text-align: left; width: 100%;">
-        <h1 class="hero-name" style="margin-bottom: 0px !important; line-height: 0.8; font-size: 8rem !important;">
+        <h1 class="hero-name" style="margin-bottom: 0px !important;">
             <span class="highlight">Diogo Bueno da Rosa</span>
         </h1>
         <div class="hero-subtitle" style="margin-top: 5px !important;">
