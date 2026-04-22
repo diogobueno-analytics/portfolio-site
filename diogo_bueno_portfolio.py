@@ -22,8 +22,7 @@ def gerar_link_pdf(caminho, texto_link):
 link_curriculo = gerar_link_pdf(curriculo_pdf, "Baixar meu currículo")
 
 # 2. CSS para Centralização Global e Alinhamento de Texto
-#st.set_page_config(page_title="Diogo Bueno - Portfólio", layout="centered")
-st.set_page_config(page_title="Portfólio | BI & Data", layout="wide")
+st.set_page_config(page_title="Diogo Bueno - Portfólio", layout="centered")
 
 st.markdown("""
 <style>
@@ -31,15 +30,7 @@ st.markdown("""
 :root {
     --max-width: 800px; /* Altere para 700px se quiser MAIS espaço nas laterais */
 }
-/* Força o container principal a centralizar e respeitar a largura */
-[data-testid="stAppViewBlockContainer"] {
-    max-width: var(--max-width) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-    padding-top: 3rem !important;
-}
+
 /* 2. FUNDO E CORES GERAIS */
 .stApp {
     background-color: #0A0A0A;
