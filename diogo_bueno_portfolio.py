@@ -47,6 +47,26 @@ p, li {
     font-size: 18px !important;
     line-height: 1.8;
 }
+[data-testid="stMarkdownContainer"] h1,
+div[data-testid="stHeadingWithActionElements"] h1 {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+}
+
+[data-testid="stMarkdownContainer"] h2,
+div[data-testid="stHeadingWithActionElements"] h2 {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+}
+
+[data-testid="stMarkdownContainer"] h3,
+div[data-testid="stHeadingWithActionElements"] h3 {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+}
 /* 3. CENTRALIZAÇÃO E ESTILO DAS ABAS */
 /* Estilização Moderna das Abas (Navegação) */
 div[data-testid="stTabs"] [role="tablist"] {
