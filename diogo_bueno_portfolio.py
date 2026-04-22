@@ -161,7 +161,19 @@ hr {
     background: none !important;  /* Garante que não tenha degradê */
     -webkit-text-fill-color: initial !important; /* Reseta a transparência */
 }   
-
+/* Responsivo para telas menores */
+    /* Ajuste fino para celular */
+    @media (max-width: 600px) {
+        .hero-name {
+            font-size: 5rem !important; 
+            line-height: 0.9 !important;
+            letter-spacing: -2px !important;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem !important;
+            margin-top: 10px !important;
+        }
+    }
 /* Botões - Quem sou eu */
 :root {
 --accent: #8B5CF6;
@@ -354,20 +366,7 @@ with aba_bio:
     .skills-grid {
         grid-template-columns: 1fr !important;
     }
- 
-    /* Responsivo para telas menores */
-    /* Ajuste fino para celular */
-    @media (max-width: 600px) {
-        .hero-name {
-            font-size: 5rem !important; 
-            line-height: 0.9 !important;
-            letter-spacing: -2px !important;
-        }
-        .hero-subtitle {
-            font-size: 1.1rem !important;
-            margin-top: 10px !important;
-        }
-    }
+                
     /* Business Intelligence - Azul */
     .skill-group:nth-child(1):hover {
         border-color: rgb(96, 165, 250) !important;
