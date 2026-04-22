@@ -141,12 +141,9 @@ hr {
     text-align: left !important;
     margin: 0 !important;
     padding: 0 !important;
-    /* No desktop, mantemos o clamp elegante */
-    font-size: clamp(5rem, 10vw, 5rem) !important; 
+    font-size: clamp(2rem, 15vw, 12rem) !important;
     line-height: 0.95 !important;
     font-weight: 900 !important;
-}
-
 .hero-name .highlight {
     font-size: inherit !important;
     display: inline-block !important;
@@ -362,20 +359,23 @@ with aba_bio:
  
     /* Responsivo para telas menores */
     /* Ajuste fino para celular */
-    @media (max-width: 600px) {
-        .hero-name {
-            /* Forçamos um tamanho fixo que "grite" na tela do celular */
-            /* 4rem é cerca de 64px, o que é bem grande para um celular */
-            font-size: 3rem !important; 
-            line-height: 0.9 !important;
-            letter-spacing: -2px !important;
+    @media (max-width: 768px) {
+            .hero-name {
+                font-size: clamp(1.5rem, 12vw, 4rem) !important;
+                line-height: 0.9 !important;
+                letter-spacing: -2px !important;
+            }
+            .hero-subtitle {
+                font-size: 0.95rem !important;
+                margin-top: 10px !important;
+            }
         }
-        .hero-subtitle {
-            /* Aumentamos um pouco o subtítulo também para acompanhar o peso do nome */
-            font-size: 1.1rem !important;
-            margin-top: 10px !important;
+
+        @media (max-width: 480px) {
+            .hero-name {
+                font-size: clamp(1.2rem, 10vw, 3rem) !important;
+            }
         }
-    }
     /* Business Intelligence - Azul */
     .skill-group:nth-child(1):hover {
         border-color: rgb(96, 165, 250) !important;
