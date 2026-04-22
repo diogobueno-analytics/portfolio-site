@@ -138,7 +138,8 @@ hr {
 }
 /* Nome Principal - GIGANTE */
 .hero-name {
-    text-align: left;
+    color: inherit !important;
+    text-align: left !important;
     margin: 0;
     padding: 0;
     /* No desktop, mantemos o clamp elegante */
@@ -151,9 +152,11 @@ hr {
     font-size: inherit;
     display: inline-block;
     letter-spacing: -1px;
-    background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
 }
 /* Subtítulo - MENOR e SEM degradê */
 .hero-subtitle {
