@@ -157,7 +157,7 @@ hr {
 }
 /* Subtítulo - MENOR e SEM degradê */
 .hero-subtitle {
-    font-size: 1rem !important; /* Tamanho fixo menor */
+    font-size: 3rem !important; /* Tamanho fixo menor */
     margin-top: -10px !important;
     color: #CCCCCC !important;    /* Cor sólida (cinza claro) */
     font-weight: 400 !important;
