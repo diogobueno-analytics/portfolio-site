@@ -223,7 +223,7 @@ with aba_bio:
     
     st.markdown("""
     <div style="text-align: left; width: 100%;">
-        <h1 class="hero-name" style="margin-bottom: 0px !important; line-height: 0.8;">
+        <h1 class="hero-name" style="margin-bottom: 0px !important; line-height: 0.8; font-size: 8rem !important;">
             <span class="highlight">Diogo Bueno da Rosa</span>
         </h1>
         <div class="hero-subtitle" style="margin-top: 5px !important;">
