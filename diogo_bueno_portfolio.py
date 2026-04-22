@@ -43,11 +43,6 @@ st.markdown("""
 .stApp {
     background-color: #0A0A0A;
 }
-h1, h2, h3 {
-    color: #8B5CF6 !important;
-    text-align: center;
-    margin-bottom: 20px !important;
-}
 
 p, span, li {
     color: #F5F5F5 !important;
