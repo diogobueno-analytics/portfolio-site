@@ -366,7 +366,7 @@ with aba_bio:
         .hero-name {
             /* Forçamos um tamanho fixo que "grite" na tela do celular */
             /* 4rem é cerca de 64px, o que é bem grande para um celular */
-            font-size: 5rem !important; 
+            font-size: 10rem !important; 
             line-height: 0.9 !important;
             letter-spacing: -2px !important;
         }
