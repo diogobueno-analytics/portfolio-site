@@ -43,13 +43,10 @@ st.markdown("""
     background-color: #0A0A0A;
 }
 
-p, li {
+p, span, li {
     color: #F5F5F5 !important;
     font-size: 18px !important;
     line-height: 1.8;
-}
-span {
-    color: #F5F5F5 !important;
 }
 /* 3. CENTRALIZAÇÃO E ESTILO DAS ABAS */
 /* Estilização Moderna das Abas (Navegação) */
@@ -232,13 +229,14 @@ with aba_bio:
     st.markdown("""
     <div style="text-align: left; width: 100%;">
         <div style="
-            font-size: 4rem !important;
-            font-weight: 900 !important;
-            line-height: 0.95 !important;
-            margin: 0 !important;
-            padding: 0 !important;
+            font-weight: 900;
+            line-height: 0.95;
+            margin: 0;
+            padding: 0;
         ">
             <span style="
+                font-size: 4rem;
+                font-weight: 900;
                 background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
