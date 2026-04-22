@@ -43,10 +43,13 @@ st.markdown("""
     background-color: #0A0A0A;
 }
 
-p, span, li {
+p, li {
     color: #F5F5F5 !important;
     font-size: 18px !important;
     line-height: 1.8;
+}
+span {
+    color: #F5F5F5 !important;
 }
 /* 3. CENTRALIZAÇÃO E ESTILO DAS ABAS */
 /* Estilização Moderna das Abas (Navegação) */
