@@ -235,6 +235,12 @@ with aba_bio:
     </div>
     <br>
     """, unsafe_allow_html=True)
+    
+    st.markdown("""
+    <h1 style="font-size: 100px; color: red;">TESTE GIGANTE 100PX</h1>
+    <h1 style="font-size: 10rem; color: blue;">TESTE GIGANTE 10REM</h1>
+    <h1 style="font-size: 20vw; color: green;">TESTE GIGANTE 20VW</h1>
+    """, unsafe_allow_html=True)
 
     st.markdown("""
     Profissional com mais de **7 anos de experiência** em Planejamento e Business Intelligence em grandes empresas. 
