@@ -138,22 +138,22 @@ hr {
 }
 /* Nome Principal - GIGANTE */
 .hero-name {
-    text-align: left !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    text-align: left;
+    margin: 0;
+    padding: 0;
     /* No desktop, mantemos o clamp elegante */
-    font-size: clamp(7rem, 10vw, 10rem) !important; 
-    line-height: 0.95 !important;
-    font-weight: 900 !important;
+    font-size: clamp(7rem, 10vw, 10rem); 
+    line-height: 0.95;
+    font-weight: 900;
 }
 
 .hero-name .highlight {
-    font-size: inherit !important;
-    display: inline-block !important;
-    letter-spacing: -1px !important;
-    background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+    font-size: inherit;
+    display: inline-block;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 /* Subtítulo - MENOR e SEM degradê */
 .hero-subtitle {
@@ -362,18 +362,18 @@ with aba_bio:
  
     /* Responsivo para telas menores */
     /* Ajuste fino para celular */
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
         .hero-name {
             /* Forçamos um tamanho fixo que "grite" na tela do celular */
             /* 4rem é cerca de 64px, o que é bem grande para um celular */
-            font-size: 3rem !important; 
-            line-height: 0.9 !important;
-            letter-spacing: -2px !important;
+            font-size: 3rem; 
+            line-height: 0.9;
+            letter-spacing: -2px;
         }
         .hero-subtitle {
             /* Aumentamos um pouco o subtítulo também para acompanhar o peso do nome */
-            font-size: 1.1rem !important;
-            margin-top: 10px !important;
+            font-size: 1.1rem;
+            margin-top: 10px;
         }
     }
     /* Business Intelligence - Azul */
