@@ -364,7 +364,7 @@ with aba_bio:
     /* Ajuste fino para celular */
     @media (max-width: 600px) {
         .hero-name {
-            font-size: 3rem !important; 
+            font-size: 5rem !important; 
             line-height: 0.9 !important;
             letter-spacing: -2px !important;
         }
