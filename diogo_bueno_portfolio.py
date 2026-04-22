@@ -142,7 +142,7 @@ hr {
     margin: 0 !important;
     padding: 0 !important;
     /* No desktop, mantemos o clamp elegante */
-    font-size: clamp(3rem, 10vw, 5rem) !important; 
+    font-size: clamp(5rem, 10vw, 5rem) !important; 
     line-height: 0.95 !important;
     font-weight: 900 !important;
 }
@@ -366,7 +366,7 @@ with aba_bio:
         .hero-name {
             /* Forçamos um tamanho fixo que "grite" na tela do celular */
             /* 4rem é cerca de 64px, o que é bem grande para um celular */
-            font-size: 10rem !important; 
+            font-size: 3rem !important; 
             line-height: 0.9 !important;
             letter-spacing: -2px !important;
         }
