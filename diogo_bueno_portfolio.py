@@ -141,22 +141,18 @@ hr {
     text-align: left !important;
     margin: 0 !important;
     padding: 0 !important;
-    /* Usamos clamp para o tamanho ser dinâmico: 
-       Mínimo 2.5rem, Ideal 8% da largura da tela, Máximo 4.5rem */
-    font-size: clamp(2.5rem, 8vw, 4.5rem) !important;
-    line-height: 1.1 !important; /* Aumentado levemente para evitar cortes no mobile */
+    /* O clamp agora vai mandar no tamanho real do texto */
+    font-size: clamp(2.5rem, 7vw, 4.5rem) !important; 
+    line-height: 1.1 !important;
     font-weight: 800 !important;
 }
 .hero-name .highlight {
-    /* Tamanho baseado na largura da tela para garantir que fique grande */
+    /* REMOVIDO: font-size e letter-spacing que quebravam o mobile */
     text-align: left !important;
     margin-bottom: 0px !important; 
     padding-bottom: 0px !important;
-    font-size: 3vw !important; 
     font-weight: 900 !important;
-    letter-spacing: -3px !important;
-    
-    /* Efeito de Degradê */
+    /* Efeito de Degradê (Mantido) */
     background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
@@ -165,8 +161,15 @@ hr {
 }
 /* Subtítulo - MENOR e SEM degradê */
 .hero-subtitle {
-        font-size: 0.9rem !important; /* Ajusta os subtítulos para não quebrarem feio */
-    }   
+    font-size: 1rem !important; /* Tamanho fixo menor */
+    margin-top: -10px !important;
+    color: #CCCCCC !important;    /* Cor sólida (cinza claro) */
+    font-weight: 400 !important;
+    margin-top: 10px !important;
+    display: block !important;
+    background: none !important;  /* Garante que não tenha degradê */
+    -webkit-text-fill-color: initial !important; /* Reseta a transparência */
+}   
 
 /* Botões - Quem sou eu */
 :root {
@@ -362,12 +365,12 @@ with aba_bio:
     }
  
     /* Responsivo para telas menores */
+    /* Ajuste fino para celular */
     @media (max-width: 768px) {
-    .hero-name {
-        /* Garante que no celular o nome tenha um tamanho de leitura confortável */
-        font-size: 2.8rem !important; 
-        line-height: 1.1 !important;
-        margin-bottom: 10px !important;
+        .hero-name {
+            /* No celular, forçamos um tamanho fixo robusto se o clamp ainda parecer pequeno */
+            font-size: 2.5rem !important; 
+        }
     }
     /* Business Intelligence - Azul */
     .skill-group:nth-child(1):hover {
