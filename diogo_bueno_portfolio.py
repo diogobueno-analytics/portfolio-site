@@ -138,6 +138,7 @@ hr {
 }
 /* Nome Principal - GIGANTE */
 .hero-name {
+    font-size: 5rem !important; 
     text-align: left !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -156,7 +157,7 @@ hr {
 }
 /* Subtítulo - MENOR e SEM degradê */
 .hero-subtitle {
-    font-size: 3rem !important; /* Tamanho fixo menor */
+    font-size: 1rem !important; /* Tamanho fixo menor */
     margin-top: -10px !important;
     color: #CCCCCC !important;    /* Cor sólida (cinza claro) */
     font-weight: 400 !important;
