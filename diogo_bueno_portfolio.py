@@ -129,24 +129,6 @@ hr {
     padding: 20px 0;
     margin-bottom: 2rem;
 }
-/* Nome Principal - GIGANTE */
-.hero-name {
-    font-size: 5rem !important; 
-    text-align: left !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    line-height: 0.95 !important;
-    font-weight: 900 !important;
-}
-.hero-name .highlight {
-    display: inline-block;
-    letter-spacing: -1px;
-    background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    color: transparent !important;
-}
 /* Subtítulo - MENOR e SEM degradê */
 .hero-subtitle {
     font-size: 1.1rem !important; /* Tamanho fixo menor */
@@ -160,14 +142,9 @@ hr {
 }   
 /* Responsivo para telas menores */
     /* Ajuste fino para celular */
-    @media (max-width: 600px) {
-        .hero-name {
-            font-size: 5rem !important; 
-            line-height: 0.9 !important;
-            letter-spacing: -2px !important;
-        }
+   @media (max-width: 600px) {
         .hero-subtitle {
-            font-size: 1.1rem !important;
+            font-size: 0.8rem !important;
             margin-top: 10px !important;
         }
         .skills-grid {
@@ -194,7 +171,7 @@ hr {
     font-weight: 700;
     text-decoration: none !important;
     transition: all 0.25s;
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.35);
+    box -shadow: 0 0 20px rgba(139, 92, 246, 0.35);
     letter-spacing: 0.2px;
     border: none;
 }
@@ -234,7 +211,7 @@ with aba_bio:
             padding: 0;
         ">
             <span style="
-                font-size: 2rem;
+                font-size: 2.5rem;
                 font-weight: 900;
                 background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%);
                 -webkit-background-clip: text;
