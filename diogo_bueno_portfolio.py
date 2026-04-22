@@ -137,7 +137,6 @@ hr {
     text-align: left !important;
     margin: 0 !important;
     padding: 0 !important;
-    font-size: 50px;  /* Fixo em 8rem no desktop */
     line-height: 0.95 !important;
     font-weight: 900 !important;
 }
