@@ -43,7 +43,7 @@ st.markdown("""
     background-color: #0A0A0A;
 }
 
-p, span, li {
+p, li {
     color: #F5F5F5 !important;
     font-size: 18px !important;
     line-height: 1.8;
@@ -254,7 +254,7 @@ with aba_bio:
     </div>
     <br>
     """, unsafe_allow_html=True)
-    
+
     st.markdown("""
     Profissional com mais de **7 anos de experiência** em Planejamento e Business Intelligence em grandes empresas. 
     Especializado em transformar dados complexos em decisões estratégicas, atuando em todo o ciclo de BI: 
