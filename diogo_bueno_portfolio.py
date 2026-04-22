@@ -235,7 +235,7 @@ with aba_bio:
     </div>
     <br>
     """, unsafe_allow_html=True)
-    
+
     st.markdown("""
     <h1 style="font-size: 100px; color: red;">TESTE GIGANTE 100PX</h1>
     <h1 style="font-size: 10rem; color: blue;">TESTE GIGANTE 10REM</h1>
@@ -285,6 +285,11 @@ with aba_bio:
 # ─── Skills ───
     st.markdown("""
     <style>
+    h1 {
+        font-size: 8rem !important;
+        line-height: 0.95 !important;
+        font-weight: 900 !important;
+    }
     /* Reset dos estilos padrão do Streamlit */
     div.skill-group {
         background-color: #1e1e1e !important;
