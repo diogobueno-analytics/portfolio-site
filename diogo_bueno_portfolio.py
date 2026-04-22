@@ -42,7 +42,6 @@ st.markdown("""
 .stApp {
     background-color: #0A0A0A;
 }
-
 p, li {
     color: #F5F5F5 !important;
     font-size: 18px !important;
@@ -235,7 +234,7 @@ with aba_bio:
             padding: 0;
         ">
             <span style="
-                font-size: 4rem;
+                font-size: 2rem;
                 font-weight: 900;
                 background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%);
                 -webkit-background-clip: text;
