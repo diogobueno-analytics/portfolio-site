@@ -16,7 +16,7 @@ def gerar_link_pdf(caminho, texto_link):
             pdf_bytes = f.read()
         b64 = base64.b64encode(pdf_bytes).decode()
         # IMPORTANTE: A classe aqui deve ser btn-primary
-        return f'<a href="data:application/pdf;base64,{b64}" download="Diogo_Bueno_Curriculo.pdf" class="btn-primary">📄 {texto_link}</a>'
+        return f'<a href="data:application/pdf;base64,{b64}" download="Diogo_Bueno_Curriculo.pdf" class="btn-primary" style="text-decoration: none; display: flex; align-items: center; padding: 8px 16px; gap: 8px;" >📄 {texto_link}</a>'
     else:
         return ""
 
