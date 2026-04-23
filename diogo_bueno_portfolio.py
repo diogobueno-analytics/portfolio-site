@@ -623,19 +623,26 @@ with aba_contato:
     st.markdown("""
     <div class="contact-grid">
     <div class="contact-card">
-        <div class="contact-icon">📧</div>
-        <div class="contact-label">Email</div>
-        <div class="contact-value">
-            <a href="mailto:adm.diogobueno@gmail.com">adm.diogobueno@gmail.com</a>
-        </div>
-    </div>
-    <div class="contact-card">
         <div class="contact-icon">💼</div>
         <div class="contact-label">LinkedIn</div>
         <div class="contact-value">
             <a href="https://www.linkedin.com/in/diogobuenodarosa/" target="_blank">Diogo Bueno</a>
         </div>
     </div>
+    <div class="contact-card">
+        <div class="contact-icon">📱</div>
+        <div class="contact-label">WhatsApp</div>
+        <div class="contact-value">
+            <a href="https://wa.me/5543920027203">(43) 92002-7203</a>
+        </div>
+    </div>
+    <div class="contact-card">
+        <div class="contact-icon">📧</div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">
+            <a href="mailto:adm.diogobueno@gmail.com">adm.diogobueno@gmail.com</a>
+        </div>
+    </div> 
     <div class="contact-card">
         <div class="contact-icon">🐙</div>
         <div class="contact-label">GitHub</div>
