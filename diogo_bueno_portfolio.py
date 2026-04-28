@@ -32,6 +32,14 @@ def img_to_base64(img_path):
 img_path = Path(__file__).parent / "imagem_pessoal_completa_melhorada.png"
 img_base64 = img_to_base64(img_path)
 
+# Icones
+icon_automacao = Path(__file__).parent / "icon-automacao.png"
+icon_automacao_base64 = img_to_base64(icon_automacao)
+icon_lampada = Path(__file__).parent / "icon-lampada.png"
+icon_lampada_base64 = img_to_base64(icon_lampada)
+icon_painel = Path(__file__).parent / "icon-painel.png"
+icon_painel_base64 = img_to_base64(icon_painel)
+
 # Markdown configurando classes CSS
 st.markdown("""
 <style>
@@ -309,11 +317,22 @@ with aba_bio:
     
     st.subheader("O que eu entrego:")
     
-    st.markdown("""
-    * **🔍 Inteligência:** Análises que identificam oportunidades e previnem riscos para o negócio.
-    * **📊 Visualização de Dados:** Dashboards End-to-End: modelagem, visualização e storytelling para suporte à diretoria.
-    * **⚙️ Automação de análises:** Otimização de rotinas de dados e automação de relatórios para ganho de escala.
-    """)
+    st.markdown(f"""
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 20px;">
+                <img src="data:image/png;base64,{icon_lampada_base64}" width="45" style="vertical-align: middle; margin-right: 5px;"/>
+                <strong>INTELIGÊNCIA:</strong> Análises que apontam oportunidades e riscos para o negócio.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <img src="data:image/png;base64,{icon_painel_base64}" width="45" style="vertical-align: middle; margin-right: 5px;"/>
+                <strong>VIZUALIZAÇÕES:</strong> Dashboards com storytelling embasando decisões.
+            </li>
+            <li style="margin-bottom: 20px;">
+                <img src="data:image/png;base64,{icon_automacao_base64}" width="45" style="vertical-align: middle; margin-right: 5px;"/>
+                <strong>AUTOMAÇÕES DE ANÁLISES:</strong> Otimização e automação de relatórios.
+            </li>
+        </ul>
+    """, unsafe_allow_html=True)
     
     st.markdown('</div>', unsafe_allow_html=True)
 
