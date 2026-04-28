@@ -2,6 +2,7 @@ import streamlit as st
 import base64
 import os
 from PIL import Image
+from pathlib import Path
 
 # 1. Configuração da página
 #st.set_page_config(page_title="Portfólio | BI & Data", layout="wide")
@@ -21,6 +22,15 @@ def gerar_link_pdf(caminho, texto_link):
         return ""
 
 link_curriculo = gerar_link_pdf(curriculo_pdf, "Baixar meu currículo")
+
+# Imagem pessoal
+def img_to_base64(img_path):
+    with open(img_path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+# Caminho relativo ao arquivo .py
+img_path = Path(__file__).parent / "imagem_pessoal_completa_melhorada.png"
+img_base64 = img_to_base64(img_path)
 
 # Markdown configurando classes CSS
 st.markdown("""
@@ -222,6 +232,22 @@ aba_bio, aba_ds, aba_pbi, aba_contato = st.tabs([
 with aba_bio:
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
     
+    st.markdown(f"""
+        <div style="display: flex; justify-content: flex-start; margin-bottom: 24px;">
+            <img src="data:image/jpeg;base64,{img_base64}"
+                style="
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    border: 2px solid #a855f7;
+                    box-shadow: 0 0 8px 2px rgba(168, 85, 247, 0.4),
+                                0 0 16px 4px rgba(168, 85, 247, 0.15);
+                "
+            />
+        </div>
+    """, unsafe_allow_html=True)
+
     st.markdown("""
     <div style="text-align: left; width: 100%;">
         <div style="
