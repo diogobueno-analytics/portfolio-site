@@ -513,7 +513,6 @@ with aba_ds:
     
     st.title("🧪 Projetos Data Science")
     st.markdown("Uma seleção de projetos de Data Science, criados em âmbito de estudos.")
-    st.markdown("<br>", unsafe_allow_html=True)
    
     # --- CSS Customizado para os Cards e Botões Roxos ---
     st.markdown("""
@@ -552,7 +551,14 @@ with aba_ds:
 
     # Exemplo de como aplicar em um dos projetos (repita a estrutura para os outros)
     with st.container():
-        st.markdown('<div class="project-card">', unsafe_allow_html=True)
+        st.markdown("""
+            <hr style="
+                border: none;
+                border-top: 1px solid #333;
+                box-shadow: 0 1px 6px 1px rgba(168, 85, 247, 0.3);
+                margin: 24px 0;
+            ">
+        """, unsafe_allow_html=True)
         st.subheader("🛒 Análise de Performance: Vendas Walmart")
         st.image("https://eu-images.contentstack.com/v3/assets/blt58a1f8f560a1ab0e/blt2043a8ed80a75292/693b270fc6eb9d7f0dded72a/Walmart_exterior.webp?width=1280&auto=webp&quality=80&disable=upscale", 
             width=200,
@@ -561,38 +567,119 @@ with aba_ds:
         Análise exploratória utilizando dados históricos para identificar padrões sazonais. 
         O projeto responde a perguntas críticas como o impacto de feriados e inflação nas vendas.
         """)
-        st.link_button("Acessar GitHub", "https://github.com/diogobueno-analytics/walmart-sales")
+        st.markdown(f"""
+            <div style="margin-top: 12px;">
+                <a href="https://github.com/diogobueno-analytics/walmart-sales" target="_blank"
+                style="
+                    padding: 8px 18px;
+                    border-radius: 8px;
+                    border: 1px solid #a855f7;
+                    color: #a855f7;
+                    text-decoration: none;
+                    font-size: 14px;
+                "
+                >
+                    Acessar GitHub
+                </a>
+            </div>
+        """, unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
 
     # Repita para Rossmann, Churn e Olist...
     with st.container():
-        st.markdown('<div class="project-card">', unsafe_allow_html=True)
+        st.markdown("""
+            <hr style="
+                border: none;
+                border-top: 1px solid #333;
+                box-shadow: 0 1px 6px 1px rgba(168, 85, 247, 0.3);
+                margin: 24px 0;
+            ">
+        """, unsafe_allow_html=True)
         st.subheader("📈 Forecast de Vendas: Redes Rossmann com Machine Learning")
         st.image("https://sopotcentrum.com.pl/images/shopsPhotos/img_42_DSC_0111.jpg", 
             width=200,
             use_container_width=True)
         st.write("Desenvolvimento de um modelo de séries temporais para prever o faturamento de mais de 3.000 farmácias.")
-        st.link_button("Acessar GitHub", "https://github.com/diogobueno-analytics/sales_forecast_rossmann")
+        st.markdown(f"""
+            <div style="margin-top: 12px;">
+                <a href="https://github.com/diogobueno-analytics/sales_forecast_rossmann" target="_blank"
+                style="
+                    padding: 8px 18px;
+                    border-radius: 8px;
+                    border: 1px solid #a855f7;
+                    color: #a855f7;
+                    text-decoration: none;
+                    font-size: 14px;
+                "
+                >
+                    Acessar GitHub
+                </a>
+            </div>
+        """, unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
 
     with st.container():
-        st.markdown('<div class="project-card">', unsafe_allow_html=True)
+        st.markdown("""
+            <hr style="
+                border: none;
+                border-top: 1px solid #333;
+                box-shadow: 0 1px 6px 1px rgba(168, 85, 247, 0.3);
+                margin: 24px 0;
+            ">
+        """, unsafe_allow_html=True)
         st.subheader("📉 Previsão de Churn: IBM Telco com Machine Learning")
         st.image("https://www.frontline-consultancy.com/wp-content/uploads/2025/07/AdobeStock_1496894737_Editorial_Use_Only-scaled.jpeg", 
             width=200,
             use_container_width=True)
         st.write("Modelo focado em retenção de clientes através da identificação antecipada de perfis com risco de cancelamento.")
-        st.link_button("Acessar GitHub", "https://github.com/diogobueno-analytics/churn-prediction-ibm-telco")
+        st.markdown(f"""
+            <div style="margin-top: 12px;">
+                <a href="https://github.com/diogobueno-analytics/churn-prediction-ibm-telco" target="_blank"
+                style="
+                    padding: 8px 18px;
+                    border-radius: 8px;
+                    border: 1px solid #a855f7;
+                    color: #a855f7;
+                    text-decoration: none;
+                    font-size: 14px;
+                "
+                >
+                    Acessar GitHub
+                </a>
+            </div>
+        """, unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
 
     with st.container():
-        st.markdown('<div class="project-card">', unsafe_allow_html=True)
+        st.markdown("""
+            <hr style="
+                border: none;
+                border-top: 1px solid #333;
+                box-shadow: 0 1px 6px 1px rgba(168, 85, 247, 0.3);
+                margin: 24px 0;
+            ">
+        """, unsafe_allow_html=True)
         st.subheader("💰 Elasticidade de Preço: Olist E-commerce")
         st.image("https://mercadoeconsumo.com.br/wp-content/uploads/2021/04/olist-divulgalcao.jpg", 
             width=200,
             use_container_width=True)
         st.write("Estudo estatístico para medir a sensibilidade da demanda em relação às variações de preço no varejo digital.")
-        st.link_button("Acessar GitHub", "https://github.com/diogobueno-analytics/preco-elasticidade-olist")
+        st.markdown(f"""
+            <div style="margin-top: 12px;">
+                <a href="https://github.com/diogobueno-analytics/preco-elasticidade-olist" target="_blank"
+                style="
+                    padding: 8px 18px;
+                    border-radius: 8px;
+                    border: 1px solid #a855f7;
+                    color: #a855f7;
+                    text-decoration: none;
+                    font-size: 14px;
+                "
+                >
+                    Acessar GitHub
+                </a>
+            </div>
+        """, unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
@@ -707,7 +794,7 @@ with aba_contato:
 
     # Rodapé simples
     st.markdown("""
-    <div style="text-align: center; opacity: 0.6; font-size: 14px;">
+    <div style="text-align: center; opacity: 0.2; font-size: 10px;">
         <p>Desenvolvido com Python e Streamlit</p>
     </div>
     """, unsafe_allow_html=True)
