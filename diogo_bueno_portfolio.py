@@ -688,7 +688,7 @@ with aba_ds:
 
 with aba_pbi:
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
-    st.write("Neste momento estou focado em desenvolver estudos de Data Science, que é um tema que tenho estudado atualmente," \
+    st.write("Neste momento estou focado em desenvolver estudos de Data Science e Python, que é um tema que tenho estudado atualmente," \
     " como Power BI é algo que já atuo a mais de 5 anos, trarei alguns projetos posteriormente.")
     st.markdown("</div>", unsafe_allow_html=True)
 
