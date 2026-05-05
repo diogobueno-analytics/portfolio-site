@@ -43,11 +43,15 @@ icon_painel_base64 = img_to_base64(icon_painel)
 # Markdown configurando classes CSS
 st.markdown("""
 <style>
-/* 1. RESET DE VARIÁVEIS E LARGURA CENTRAL */
+/* 1. VARIÁVEIS E LARGURA */
 :root {
-    --max-width: 800px; /* Altere para 700px se quiser MAIS espaço nas laterais */
+    --max-width: 800px;
+    --accent: #8B5CF6;
+    --radius-sm: 8px;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
-/* Força o container principal a centralizar e respeitar a largura */
+
 [data-testid="stAppViewBlockContainer"] {
     max-width: var(--max-width) !important;
     margin-left: auto !important;
@@ -56,15 +60,18 @@ st.markdown("""
     padding-right: 2rem !important;
     padding-top: 3rem !important;
 }
+
 /* 2. FUNDO E CORES GERAIS */
 .stApp {
     background-color: #0A0A0A;
 }
+
 p, li {
     color: #F5F5F5 !important;
     font-size: 18px !important;
     line-height: 1.8;
 }
+
 [data-testid="stMarkdownContainer"] h1,
 div[data-testid="stHeadingWithActionElements"] h1 {
     font-size: 2rem !important;
@@ -85,55 +92,54 @@ div[data-testid="stHeadingWithActionElements"] h3 {
     font-weight: 600 !important;
     color: #FFFFFF !important;
 }
-/* 3. CENTRALIZAÇÃO E ESTILO DAS ABAS */
-/* Estilização Moderna das Abas (Navegação) */
+
+/* 3. ABAS — bloco único, sem duplicatas */
 div[data-testid="stTabs"] [role="tablist"] {
-    background-color: #1A1A1A !important; /* Fundo do menu ligeiramente mais claro que o site */
+    background-color: #1A1A1A !important;
     padding: 8px !important;
-    border-radius: 50px !important; /* Formato de pílula */
+    border-radius: 50px !important;
     border: 1px solid #333333 !important;
     margin-bottom: 30px !important;
-    gap: 10px !important;
+    gap: 0px !important;
 }
+
 button[data-baseweb="tab"] {
-    border-radius: 40px !important; /* Botões internos arredondados */
-    padding: 10px 25px !important;   
+    border-radius: 40px !important;
+    padding: 8px 12px !important;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     border: none !important;
     background-color: transparent !important;
+    color: #FFFFFF !important;
+    margin: 0 2px !important;
 }
-/* Aba Selecionada (Destaque) */
+
+button[data-baseweb="tab"] p {
+    font-size: 17px !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    color: #FFFFFF !important;
+}
+
 button[data-baseweb="tab"][aria-selected="true"] {
-    background-color: #FFFFFF !important; /* Roxo vibrante */
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important; /* Brilho suave */
-}
-button[data-baseweb="tab"][aria-selected="true"] p {
-    color: #FFFFFF !important;
-    font-weight: 600 !important;
-}
-/* Efeito de Hover nas Abas */
-button[data-baseweb="tab"]:hover {
-    background-color: rgba(139, 92, 246, 0.1) !important;
-    transform: translateY(-2px) !important; /* Leve subida */
-}
-/* Remove a linha original do Streamlit que fica embaixo */
-div[data-baseweb="tab-highlight"] {
-    display: none !important;
-}
-button[data-baseweb="tab"] {
-    color: #FFFFFF !important;
-    font-size: 18px !important;
-    background-color: transparent !important;
+    background-color: #FFFFFF !important;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important;
 }
 
 button[data-baseweb="tab"][aria-selected="true"] p {
     color: #8B5CF6 !important;
     font-weight: bold !important;
 }
-div[data-baseweb="tab-highlight"] {
-    background-color: #8B5CF6 !important;
+
+button[data-baseweb="tab"]:hover {
+    background-color: rgba(139, 92, 246, 0.1) !important;
+    transform: translateY(-2px) !important;
 }
-/* 4. BOTÕES: ESTADO NORMAL E HOVER (LETRA ROXA) */
+
+div[data-baseweb="tab-highlight"] {
+    display: none !important;
+}
+
+/* 4. BOTÕES */
 div.stButton > button, div.stLinkButton > a {
     background-color: #8B5CF6 !important;
     color: #FFFFFF !important;
@@ -147,8 +153,8 @@ div.stButton > button, div.stLinkButton > a {
     display: block;
     text-align: center;
 }
-/* O ajuste que você pediu: Fundo branco e Letra Roxa ao passar o mouse */
-div.stButton > button:hover, 
+
+div.stButton > button:hover,
 div.stLinkButton > a:hover,
 div.stLinkButton > a:hover p {
     background-color: #FFFFFF !important;
@@ -156,83 +162,79 @@ div.stLinkButton > a:hover p {
     -webkit-text-fill-color: #8B5CF6 !important;
     transform: scale(1.02) !important;
 }
-/* Divisor */
+
+/* 5. DIVISOR */
 hr {
     border-color: #333333 !important;
 }
-        
-/* Container do Título Principal */
+
+/* 6. HERO */
 .hero-container {
     text-align: center;
     padding: 20px 0;
     margin-bottom: 2rem;
 }
-/* Subtítulo - MENOR e SEM degradê */
+
 .hero-subtitle {
-    font-size: 1.1rem !important; /* Tamanho fixo menor */
-    margin-top: -10px !important;
-    color: #CCCCCC !important;    /* Cor sólida (cinza claro) */
+    font-size: 1.1rem !important;
+    color: #CCCCCC !important;
     font-weight: 400 !important;
     margin-top: 10px !important;
     display: block !important;
-    background: none !important;  /* Garante que não tenha degradê */
-    -webkit-text-fill-color: initial !important; /* Reseta a transparência */
-}   
-/* Responsivo para telas menores */
-    /* Ajuste fino para celular */
-   @media (max-width: 600px) {
-        .hero-subtitle {
-            font-size: 0.8rem !important;
-            margin-top: 10px !important;
-        }
-        .skills-grid {
-            grid-template-columns: 1fr !important;
-        }
-    }
-/* Botões - Quem sou eu */
-:root {
---accent: #8B5CF6;
---radius-sm: 8px;
---glass: rgba(255, 255, 255, 0.05);
---glass-border: rgba(255, 255, 255, 0.1);
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
 }
+
+.hero-cta {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 25px;
+}
+
 .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
     padding: 0.75rem 1.6rem;
-    /* Usei o seu roxo no gradiente */
     background: linear-gradient(135deg, #8B5CF6 0%, #4299e1 100%);
-    color: white !important; /* Cor do texto */
+    color: white !important;
     border-radius: var(--radius-sm);
     font-size: 0.875rem;
     font-weight: 700;
     text-decoration: none !important;
     transition: all 0.25s;
-    box -shadow: 0 0 20px rgba(139, 92, 246, 0.35);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.35);
     letter-spacing: 0.2px;
     border: none;
 }
+
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 30px rgba(139, 92, 246, 0.55);
     color: white !important;
     text-decoration: none;
 }
-.hero-cta {
-    display: flex;
-    gap: 0.75rem;
-    margin-top: 25px;
-}  
+
+/* 7. RESPONSIVO */
+@media (max-width: 600px) {
+    .hero-subtitle {
+        font-size: 0.8rem !important;
+        margin-top: 10px !important;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
 </style>
 """, unsafe_allow_html=True)
 
 # 3. Navegação
 #👤🧪📊📩
-aba_bio, aba_ds, aba_pbi, aba_contato = st.tabs([
+aba_bio, aba_ds, aba_pbi, aba_portais, aba_contato = st.tabs([
     "Quem sou eu", 
     "Projetos Data Science", 
     "Projetos Power BI", 
+    "Portais de Gestão", 
     "Contato"
 ])
 
@@ -688,6 +690,36 @@ with aba_pbi:
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
     st.write("Neste momento estou focado em desenvolver estudos de Data Science, que é um tema que tenho estudado atualmente," \
     " como Power BI é algo que já atuo a mais de 5 anos, trarei alguns projetos posteriormente.")
+    st.markdown("</div>", unsafe_allow_html=True)
+
+with aba_portais:
+    st.markdown('<div class="main-container">', unsafe_allow_html=True)
+    st.title("⚙️ Projetos de Portais de Gestão")
+    st.markdown("""
+        Na minha experiência profissional, notei que muitas rotinas da área de BI ainda carecem de automação. 
+        Uma solução extremamente eficiente que entendi fazer sentido é a **criação de portais customizados** com Python e Streamlit.
+
+        Por meio deste tipo de solução, ganhamos:
+        *   **Automação** de processos manuais.
+        *   **Gestão** flexível por meio de python.
+        *   **Solução estruturada** com performance e escalabilidade.
+        ---
+        ### 🔐 Para a correta gestão de cada solução por meio de portal, é fundamental:
+
+        1.  **Controle de Acesso:** Camada de segurança para garantir que apenas colaboradores autorizados acessem o portal.
+        2.  **Integração Direta:** Conexão das interações do portal diretamente com o banco de dados.
+    """)
+    st.markdown(""" --- """)
+    st.subheader("🪪 Portal de gestão de acessos aos dashboards - RLS")
+    st.write("""
+        Desenvolvi um portal de gestão de acessos aos dashboards, utilizando Python e Streamlit:
+                    
+        1. **Inclusão** de novos usuários, incluindo quais dashboads, qual nível de acesso etc.
+        2. **Edição** dos usuários já cadastrados.
+        3. **Extração** e consulta dos acessos já concedidos.
+    """)
+    st.video("gestao_rls.mp4")
+    
     st.markdown("</div>", unsafe_allow_html=True)
 
 with aba_contato:
