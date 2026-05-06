@@ -178,8 +178,8 @@ div.stLinkButton > a:hover p {
 /* 5. DIVISOR */
 hr {
     border: none !important;
-    height: 1px !important;
-    background: linear-gradient(to right, #BF9969 0%, rgba(191, 153, 105, 0.5) 50%, rgba(191, 153, 105, 0) 100%) !important;
+    height: 0.4px !important;
+    background: linear-gradient(to right, #BF9969 0%, rgba(191, 153, 105, 0.5) 70%, rgba(191, 153, 105, 0) 100%) !important;
 }
 
 /* 6. HERO */
@@ -351,7 +351,6 @@ with aba_bio:
         </ul>
     """, unsafe_allow_html=True)
     
-    st.markdown('</div>', unsafe_allow_html=True)
     st.divider()
 
 # ─── Skills ───
