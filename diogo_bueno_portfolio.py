@@ -717,6 +717,7 @@ with aba_pbi:
     </div>
     """.replace('\n', '').strip()
     st.markdown(html_cases, unsafe_allow_html=True)
+    
     st.markdown("</div>", unsafe_allow_html=True)
 
     imagens = [
