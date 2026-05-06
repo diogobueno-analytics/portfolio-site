@@ -325,19 +325,31 @@ with aba_bio:
     st.divider()
     
     st.subheader("O que eu entrego:")
-    
+    st.markdown("""
+    <style>
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+
+    .swing-icon {
+        display: inline-block;
+        animation: bounce 2.7s ease-in-out infinite;
+    }
+    </style>
+    """, unsafe_allow_html=True)
     st.markdown(f"""
         <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 20px;">
-                <span style="font-size: 28px; margin-right: 10px;">💡</span>
+                <span class="swing-icon" style="font-size: 28px; margin-right: 10px;">💡</span>
                 <strong>INTELIGÊNCIA:</strong> Análises que apontam oportunidades e riscos para o negócio.
             </li>
             <li style="margin-bottom: 20px;">
-                <span style="font-size: 28px; margin-right: 10px;">📊</span>
+                <span class="swing-icon" style="font-size: 28px; margin-right: 10px;">📊</span>
                 <strong>VIZUALIZAÇÕES:</strong> Dashboards com storytelling embasando decisões.
             </li>
             <li style="margin-bottom: 20px;">
-                <span style="font-size: 28px; margin-right: 10px;">⚙️</span>
+                <span class="swing-icon" style="font-size: 28px; margin-right: 10px;">⚙️</span>
                 <strong>AUTOMAÇÕES DE ANÁLISES:</strong> Otimização e automação de relatórios.
             </li>
         </ul>
@@ -522,6 +534,7 @@ with aba_ds:
     
     st.title("🧪 Projetos Data Science")
     st.markdown("Uma seleção de projetos de Data Science, criados em âmbito de estudos.")
+    
     st.divider()
 
     # Exemplo de como aplicar em um dos projetos (repita a estrutura para os outros)
