@@ -10,18 +10,30 @@ st.set_page_config(page_title="Diogo Bueno - Portfólio", layout="centered")
 
 # ─── Curriculo Download Helper ───
 curriculo_pdf = "Diogo Bueno - Currículo.pdf"
+cases_pdf = "pbi_projetos_imagens\cases_diogo_bueno.pdf"
 
-def gerar_link_pdf(caminho, texto_link):
+def gerar_link_pdf(caminho, texto_link, nome_download):
+    """
+    caminho: local do arquivo no disco
+    texto_link: texto que aparece no botão
+    nome_download: nome que o arquivo terá ao ser baixado
+    """
     if os.path.exists(caminho):
         with open(caminho, "rb") as f:
             pdf_bytes = f.read()
         b64 = base64.b64encode(pdf_bytes).decode()
-        # IMPORTANTE: A classe aqui deve ser btn-primary
-        return f'<a href="data:application/pdf;base64,{b64}" download="Diogo_Bueno_Curriculo.pdf" class="btn-primary" style="text-decoration: none; display: flex; align-items: center; padding: 8px 16px; gap: 8px;" >📄 {texto_link}</a>'
+        
+        # O atributo 'download' agora usa a variável nome_download
+        return (f'<a href="data:application/pdf;base64,{b64}" '
+                f'download="{nome_download}" class="btn-primary" '
+                f'style="text-decoration: none; display: flex; align-items: center; padding: 8px 16px; gap: 8px;">'
+                f'📄 {texto_link}</a>')
     else:
-        return ""
+        return f"<!-- Arquivo não encontrado: {caminho} -->"
 
-link_curriculo = gerar_link_pdf(curriculo_pdf, "Baixar meu currículo")
+link_curriculo = gerar_link_pdf(curriculo_pdf, "Baixar meu currículo", "Diogo_Bueno_Curriculo.pdf")
+link_cases = gerar_link_pdf(cases_pdf, "Baixar Cases", "Cases_Diogo_Bueno.pdf")
+
 
 # Imagem pessoal
 def img_to_base64(img_path):
@@ -46,7 +58,7 @@ st.markdown("""
 /* 1. VARIÁVEIS E LARGURA */
 :root {
     --max-width: 800px;
-    --accent: #8B5CF6;
+    --accent: #BF9969;
     --radius-sm: 8px;
     --glass: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
@@ -121,17 +133,17 @@ button[data-baseweb="tab"] p {
 }
 
 button[data-baseweb="tab"][aria-selected="true"] {
-    background-color: #FFFFFF !important;
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important;
+    background-color: #BF9969 !important;
+    box-shadow: 0 4px 15px rgba(191, 153, 105, 0.3) !important;
 }
 
 button[data-baseweb="tab"][aria-selected="true"] p {
-    color: #8B5CF6 !important;
+    color: #FFFFFF !important;
     font-weight: bold !important;
 }
 
 button[data-baseweb="tab"]:hover {
-    background-color: rgba(139, 92, 246, 0.1) !important;
+    background-color: rgba(191, 153, 105, 0.3) !important;
     transform: translateY(-2px) !important;
 }
 
@@ -141,7 +153,7 @@ div[data-baseweb="tab-highlight"] {
 
 /* 4. BOTÕES */
 div.stButton > button, div.stLinkButton > a {
-    background-color: #8B5CF6 !important;
+    background: linear-gradient(135deg, #D3AF37 0%, #BF9969 50%, #8B6914 100%) !important;
     color: #FFFFFF !important;
     border: none !important;
     padding: 10px 20px !important;
@@ -157,15 +169,17 @@ div.stButton > button, div.stLinkButton > a {
 div.stButton > button:hover,
 div.stLinkButton > a:hover,
 div.stLinkButton > a:hover p {
-    background-color: #FFFFFF !important;
-    color: #8B5CF6 !important;
-    -webkit-text-fill-color: #8B5CF6 !important;
+    background: linear-gradient(135deg, #E8C547 0%, #D4A574 50%, #A68500 100%) !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
     transform: scale(1.02) !important;
 }
 
 /* 5. DIVISOR */
 hr {
-    border-color: #333333 !important;
+    border: none !important;
+    height: 1px !important;
+    background: linear-gradient(to right, #BF9969 0%, rgba(191, 153, 105, 0.5) 50%, rgba(191, 153, 105, 0) 100%) !important;
 }
 
 /* 6. HERO */
@@ -196,21 +210,22 @@ hr {
     align-items: center;
     gap: 0.45rem;
     padding: 0.75rem 1.6rem;
-    background: linear-gradient(135deg, #8B5CF6 0%, #4299e1 100%);
+    background: linear-gradient(135deg, #C9A961 0%, #BF9969 50%, #8B6914 100%);
     color: white !important;
     border-radius: var(--radius-sm);
     font-size: 0.875rem;
     font-weight: 700;
     text-decoration: none !important;
     transition: all 0.25s;
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.35);
+    box-shadow: 0 0 20px rgba(191, 153, 105, 0.35);
     letter-spacing: 0.2px;
     border: none;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.55);
+    box-shadow: 0 0 30px rgba(191, 153, 105, 0.55);
+    background: linear-gradient(135deg, #D4A574 0%, #C9A961 50%, #A68500 100%);
     color: white !important;
     text-decoration: none;
 }
@@ -250,9 +265,9 @@ with aba_bio:
                     height: 200px;
                     border-radius: 50%;
                     object-fit: cover;
-                    border: 2px solid #a855f7;
-                    box-shadow: 0 0 8px 2px rgba(168, 85, 247, 0.4),
-                                0 0 16px 4px rgba(168, 85, 247, 0.15);
+                    border: 2px solid #BF9969;
+                    box-shadow: 0 0 8px 2px rgba(212, 165, 116, 0.4),
+                                0 0 16px 4px rgba(212, 165, 116, 0.15);
                 "
             />
         </div>
@@ -269,7 +284,7 @@ with aba_bio:
             <span style="
                 font-size: 2.5rem;
                 font-weight: 900;
-                background: linear-gradient(135deg, #CFFAFE 0%, #A78BFA 45%, #7C3AED 100%);
+                background: linear-gradient(135deg, #FFFFFF 0%, #E8D4C0 35%, #D4A574 65%, #BF9969 100%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
@@ -337,6 +352,7 @@ with aba_bio:
     """, unsafe_allow_html=True)
     
     st.markdown('</div>', unsafe_allow_html=True)
+    st.divider()
 
 # ─── Skills ───
     st.markdown("""
@@ -355,7 +371,7 @@ with aba_bio:
  
     div.skill-group:hover {
         transform: translateY(-5px) !important;
-        border-color: #8B5CF6 !important;
+        border-color: #BF9969 !important;
         background: #252525 !important;
         box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3) !important;
     }
@@ -529,7 +545,7 @@ with aba_ds:
     }
     /* Estilização do Botão (simulando o estilo do Streamlit com suas cores) */
     div.stButton > button, div.stLinkButton > a {
-        background-color: #8B5CF6 !important;
+        background-color: #BF9969 !important;
         color: #FFFFFF !important;
         border: none !important;
         padding: 10px 20px !important;
@@ -544,8 +560,8 @@ with aba_ds:
         div.stLinkButton > a:hover,
         div.stLinkButton > a:hover p {
         background-color: #FFFFFF !important;
-        color: #8B5CF6 !important; /* ROXO FORÇADO */
-        -webkit-text-fill-color: #8B5CF6 !important; /* Força em navegadores Chrome/Safari */
+        color: #BF9969 !important; /* DOURADO FORÇADO */
+        -webkit-text-fill-color: #BF9969 !important; /* Força em navegadores Chrome/Safari */
         transform: scale(1.05) !important;
     }
     </style>
@@ -557,7 +573,7 @@ with aba_ds:
             <hr style="
                 border: none;
                 border-top: 1px solid #333;
-                box-shadow: 0 1px 6px 1px rgba(168, 85, 247, 0.3);
+                box-shadow: 0 1px 6px 1px rgba(211, 175, 55, 0.3);
                 margin: 24px 0;
             ">
         """, unsafe_allow_html=True)
@@ -593,7 +609,7 @@ with aba_ds:
             <hr style="
                 border: none;
                 border-top: 1px solid #333;
-                box-shadow: 0 1px 6px 1px rgba(168, 85, 247, 0.3);
+                box-shadow: 0 1px 6px 1px rgba(211, 175, 55, 0.3);
                 margin: 24px 0;
             ">
         """, unsafe_allow_html=True)
@@ -625,7 +641,7 @@ with aba_ds:
             <hr style="
                 border: none;
                 border-top: 1px solid #333;
-                box-shadow: 0 1px 6px 1px rgba(168, 85, 247, 0.3);
+                box-shadow: 0 1px 6px 1px rgba(211, 175, 55, 0.3);
                 margin: 24px 0;
             ">
         """, unsafe_allow_html=True)
@@ -688,9 +704,44 @@ with aba_ds:
 
 with aba_pbi:
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
-    st.write("Neste momento estou focado em desenvolver estudos de Data Science e Python, que é um tema que tenho estudado atualmente," \
-    " como Power BI é algo que já atuo a mais de 5 anos, trarei alguns projetos posteriormente.")
+    st.title("📊 Projetos em Power BI")
+    st.write("""
+        Sou um profissional que trabalha com Power BI a mais de 5 anos, nesta sessão tratei projetos de estudo na ferramenta. Contudo, atuamente estou focado em desenvolver estudos de Data Science e Python, portanto trarei alguns projetos aqui posteriormente.
+            
+        Por hora compartilho um PDF e as imagens abaixo, trazendo algums projetos desenvolvidos em âmbito de trabalho real."""
+    )
     st.markdown("</div>", unsafe_allow_html=True)
+
+    html_cases = f"""
+    <div class="hero-cta" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+        {link_cases}
+    </div>
+    """.replace('\n', '').strip()
+    st.markdown(html_cases, unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    imagens = [
+        "pbi_projetos_imagens/Slide1.PNG",
+        "pbi_projetos_imagens/Slide2.PNG",
+        "pbi_projetos_imagens/Slide3.PNG",
+        "pbi_projetos_imagens/Slide4.PNG",
+        "pbi_projetos_imagens/Slide5.PNG",
+        "pbi_projetos_imagens/Slide6.PNG",
+        "pbi_projetos_imagens/Slide7.PNG",
+    ]
+    for imagem in imagens:
+    # Verificar se o arquivo existe
+        if os.path.exists(imagem):
+            st.image(imagem, use_container_width=True)
+        else:
+            # Mostrar mensagem de erro com o caminho completo
+            caminho_completo = os.path.abspath(imagem)
+            st.error(f"❌ Imagem não encontrada: {caminho_completo}")
+            
+            # Listar arquivos no diretório para debug
+            if os.path.exists("pbi_projetos_imagens"):
+                st.write("📁 Arquivos encontrados na pasta:")
+                st.write(os.listdir("pbi_projetos_imagens"))
 
 with aba_portais:
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
@@ -754,7 +805,7 @@ with aba_contato:
         backdrop-filter: var(--blur);
     }
     .contact-card:hover {
-        border-color: v#8B5CF6;
+        border-color: #BF9969;
         background: rgba(139, 92, 246, 0.1);
         transform: translateY(-3px);
         box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 20px var(--accent-glow);
@@ -775,7 +826,7 @@ with aba_contato:
         margin-top: 0.2rem;
     }
     .contact-value a { color: #FFFFFF; text-decoration: none; }
-    .contact-value a:hover { color: #8B5CF6; }
+    .contact-value a:hover { color: #BF9969; }
     </style>    
         """, unsafe_allow_html=True) 
 
