@@ -683,7 +683,7 @@ with aba_pbi:
         "pbi_projetos_imagens/Slide5.PNG",
         "pbi_projetos_imagens/Slide6.PNG",
         "pbi_projetos_imagens/Slide7.PNG",
-        "pbi_projetos_imagens/Slide8.PNG",
+        "pbi_projetos_imagens/Slide8.PNG"
     ]
     for imagem in imagens:
     # Verificar se o arquivo existe
