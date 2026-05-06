@@ -44,14 +44,6 @@ def img_to_base64(img_path):
 img_path = Path(__file__).parent / "imagem_pessoal_completa_melhorada.png"
 img_base64 = img_to_base64(img_path)
 
-# Icones
-icon_automacao = Path(__file__).parent / "icon-automacao.png"
-icon_automacao_base64 = img_to_base64(icon_automacao)
-icon_lampada = Path(__file__).parent / "icon-lampada.png"
-icon_lampada_base64 = img_to_base64(icon_lampada)
-icon_painel = Path(__file__).parent / "icon-painel.png"
-icon_painel_base64 = img_to_base64(icon_painel)
-
 # Markdown configurando classes CSS
 st.markdown("""
 <style>
@@ -337,15 +329,15 @@ with aba_bio:
     st.markdown(f"""
         <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 20px;">
-                <img src="data:image/png;base64,{icon_lampada_base64}" width="45" style="vertical-align: middle; margin-right: 5px;"/>
+                <span style="font-size: 28px; margin-right: 10px;">💡</span>
                 <strong>INTELIGÊNCIA:</strong> Análises que apontam oportunidades e riscos para o negócio.
             </li>
             <li style="margin-bottom: 20px;">
-                <img src="data:image/png;base64,{icon_painel_base64}" width="45" style="vertical-align: middle; margin-right: 5px;"/>
+                <span style="font-size: 28px; margin-right: 10px;">📊</span>
                 <strong>VIZUALIZAÇÕES:</strong> Dashboards com storytelling embasando decisões.
             </li>
             <li style="margin-bottom: 20px;">
-                <img src="data:image/png;base64,{icon_automacao_base64}" width="45" style="vertical-align: middle; margin-right: 5px;"/>
+                <span style="font-size: 28px; margin-right: 10px;">⚙️</span>
                 <strong>AUTOMAÇÕES DE ANÁLISES:</strong> Otimização e automação de relatórios.
             </li>
         </ul>
@@ -530,52 +522,10 @@ with aba_ds:
     
     st.title("🧪 Projetos Data Science")
     st.markdown("Uma seleção de projetos de Data Science, criados em âmbito de estudos.")
-   
-    # --- CSS Customizado para os Cards e Botões Roxos ---
-    st.markdown("""
-    <style>
-    /* Card de Projeto */
-    .project-card {
-        background-color: #1A1A1A;
-        padding: 25px;
-        border-radius: 15px;
-        border: 1px solid #333333;
-        margin-bottom: 25px;
-    }
-    /* Estilização do Botão (simulando o estilo do Streamlit com suas cores) */
-    div.stButton > button, div.stLinkButton > a {
-        background-color: #BF9969 !important;
-        color: #FFFFFF !important;
-        border: none !important;
-        padding: 10px 20px !important;
-        border-radius: 8px !important;
-        transition: all 0.3s ease !important;
-        font-weight: bold !important;
-        text-decoration: none !important;
-        display: inline-block !important;
-    }
-    /* Efeito de Hover (Passar o mouse) - Forçando a cor no texto interno */
-        div.stButton > button:hover, 
-        div.stLinkButton > a:hover,
-        div.stLinkButton > a:hover p {
-        background-color: #FFFFFF !important;
-        color: #BF9969 !important; /* DOURADO FORÇADO */
-        -webkit-text-fill-color: #BF9969 !important; /* Força em navegadores Chrome/Safari */
-        transform: scale(1.05) !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+    st.divider()
 
     # Exemplo de como aplicar em um dos projetos (repita a estrutura para os outros)
     with st.container():
-        st.markdown("""
-            <hr style="
-                border: none;
-                border-top: 1px solid #333;
-                box-shadow: 0 1px 6px 1px rgba(211, 175, 55, 0.3);
-                margin: 24px 0;
-            ">
-        """, unsafe_allow_html=True)
         st.subheader("🛒 Análise de Performance: Vendas Walmart")
         st.image("https://eu-images.contentstack.com/v3/assets/blt58a1f8f560a1ab0e/blt2043a8ed80a75292/693b270fc6eb9d7f0dded72a/Walmart_exterior.webp?width=1280&auto=webp&quality=80&disable=upscale", 
             width=200,
@@ -588,30 +538,26 @@ with aba_ds:
             <div style="margin-top: 12px;">
                 <a href="https://github.com/diogobueno-analytics/walmart-sales" target="_blank"
                 style="
-                    padding: 8px 18px;
+                    padding: 10px 20px;
                     border-radius: 8px;
-                    border: 1px solid #a855f7;
-                    color: #a855f7;
+                    border: 2px solid #BF9969;
+                    background: linear-gradient(135deg, rgba(211, 175, 55, 0.1) 0%, rgba(191, 153, 105, 0.05) 100%);
+                    color: #D3AF37;
                     text-decoration: none;
                     font-size: 14px;
+                    font-weight: 600;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
                 "
                 >
                     Acessar GitHub
                 </a>
             </div>
         """, unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+    st.divider()
 
     # Repita para Rossmann, Churn e Olist...
     with st.container():
-        st.markdown("""
-            <hr style="
-                border: none;
-                border-top: 1px solid #333;
-                box-shadow: 0 1px 6px 1px rgba(211, 175, 55, 0.3);
-                margin: 24px 0;
-            ">
-        """, unsafe_allow_html=True)
         st.subheader("📈 Forecast de Vendas: Redes Rossmann com Machine Learning")
         st.image("https://sopotcentrum.com.pl/images/shopsPhotos/img_42_DSC_0111.jpg", 
             width=200,
@@ -621,29 +567,25 @@ with aba_ds:
             <div style="margin-top: 12px;">
                 <a href="https://github.com/diogobueno-analytics/sales_forecast_rossmann" target="_blank"
                 style="
-                    padding: 8px 18px;
+                    padding: 10px 20px;
                     border-radius: 8px;
-                    border: 1px solid #a855f7;
-                    color: #a855f7;
+                    border: 2px solid #BF9969;
+                    background: linear-gradient(135deg, rgba(211, 175, 55, 0.1) 0%, rgba(191, 153, 105, 0.05) 100%);
+                    color: #D3AF37;
                     text-decoration: none;
                     font-size: 14px;
+                    font-weight: 600;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
                 "
                 >
                     Acessar GitHub
                 </a>
             </div>
-        """, unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+        """, unsafe_allow_html=True)    
+    st.divider()
 
     with st.container():
-        st.markdown("""
-            <hr style="
-                border: none;
-                border-top: 1px solid #333;
-                box-shadow: 0 1px 6px 1px rgba(211, 175, 55, 0.3);
-                margin: 24px 0;
-            ">
-        """, unsafe_allow_html=True)
         st.subheader("📉 Previsão de Churn: IBM Telco com Machine Learning")
         st.image("https://www.frontline-consultancy.com/wp-content/uploads/2025/07/AdobeStock_1496894737_Editorial_Use_Only-scaled.jpeg", 
             width=200,
@@ -653,29 +595,25 @@ with aba_ds:
             <div style="margin-top: 12px;">
                 <a href="https://github.com/diogobueno-analytics/churn-prediction-ibm-telco" target="_blank"
                 style="
-                    padding: 8px 18px;
+                    padding: 10px 20px;
                     border-radius: 8px;
-                    border: 1px solid #a855f7;
-                    color: #a855f7;
+                    border: 2px solid #BF9969;
+                    background: linear-gradient(135deg, rgba(211, 175, 55, 0.1) 0%, rgba(191, 153, 105, 0.05) 100%);
+                    color: #D3AF37;
                     text-decoration: none;
                     font-size: 14px;
+                    font-weight: 600;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
                 "
                 >
                     Acessar GitHub
                 </a>
             </div>
         """, unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+    st.divider()
 
     with st.container():
-        st.markdown("""
-            <hr style="
-                border: none;
-                border-top: 1px solid #333;
-                box-shadow: 0 1px 6px 1px rgba(168, 85, 247, 0.3);
-                margin: 24px 0;
-            ">
-        """, unsafe_allow_html=True)
         st.subheader("💰 Elasticidade de Preço: Olist E-commerce")
         st.image("https://mercadoeconsumo.com.br/wp-content/uploads/2021/04/olist-divulgalcao.jpg", 
             width=200,
@@ -685,12 +623,16 @@ with aba_ds:
             <div style="margin-top: 12px;">
                 <a href="https://github.com/diogobueno-analytics/preco-elasticidade-olist" target="_blank"
                 style="
-                    padding: 8px 18px;
+                    padding: 10px 20px;
                     border-radius: 8px;
-                    border: 1px solid #a855f7;
-                    color: #a855f7;
+                    border: 2px solid #BF9969;
+                    background: linear-gradient(135deg, rgba(211, 175, 55, 0.1) 0%, rgba(191, 153, 105, 0.05) 100%);
+                    color: #D3AF37;
                     text-decoration: none;
                     font-size: 14px;
+                    font-weight: 600;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
                 "
                 >
                     Acessar GitHub
@@ -754,13 +696,12 @@ with aba_portais:
         *   **Automação** de processos manuais.
         *   **Gestão** flexível por meio de python.
         *   **Solução estruturada** com performance e escalabilidade.
-        ---
         ### 🔐 Para a correta gestão de cada solução por meio de portal, é fundamental:
 
         1.  **Controle de Acesso:** Camada de segurança para garantir que apenas colaboradores autorizados acessem o portal.
         2.  **Integração Direta:** Conexão das interações do portal diretamente com o banco de dados.
     """)
-    st.markdown(""" --- """)
+    st.divider()
     st.subheader("🪪 Portal de gestão de acessos aos dashboards - RLS")
     st.write("""
         Desenvolvi um portal de gestão de acessos aos dashboards, utilizando Python e Streamlit:
