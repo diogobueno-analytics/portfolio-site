@@ -10,7 +10,7 @@ st.set_page_config(page_title="Diogo Bueno - Portfólio", layout="centered")
 
 # ─── Curriculo Download Helper ───
 curriculo_pdf = "Diogo Bueno - Currículo.pdf"
-cases_pdf = "pbi_projetos_imagens\cases_diogo_bueno.pdf"
+cases_pdf = "pbi_projetos_imagens/cases_diogo_bueno.pdf"
 
 def gerar_link_pdf(caminho, texto_link, nome_download):
     """
@@ -118,7 +118,7 @@ button[data-baseweb="tab"] {
 }
 
 button[data-baseweb="tab"] p {
-    font-size: 17px !important;
+    font-size: 16px !important;
     margin: 0 !important;
     line-height: 1 !important;
     color: #FFFFFF !important;
@@ -500,6 +500,7 @@ with aba_bio:
             <span class="skill-tag tag-purple">VS Code</span>                
             <span class="skill-tag tag-purple">Excel</span>
             <span class="skill-tag tag-purple">KNIME</span> 
+            <span class="skill-tag tag-purple">PBI Report Builder</span> 
             <span class="skill-tag tag-purple">PowerPoint</span>
             <span class="skill-tag tag-purple">Jira/Clickup/Trello</span>
         </div>              
@@ -531,15 +532,28 @@ with aba_bio:
 # As demais abas seguem o mesmo padrão de container para manter o menu no lugar
 with aba_ds:
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
-    
-    st.title("🧪 Projetos Data Science")
+    st.markdown("""
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="swing-icon" style="font-size: 36px;">🧪</span>
+            <h1 style="margin: 0;">Projetos Data Science</h1>
+        </div>
+    """, unsafe_allow_html=True)
+
+    #st.title("🧪 Projetos Data Science")
     st.markdown("Uma seleção de projetos de Data Science, criados em âmbito de estudos.")
     
     st.divider()
 
     # Exemplo de como aplicar em um dos projetos (repita a estrutura para os outros)
     with st.container():
-        st.subheader("🛒 Análise de Performance: Vendas Walmart")
+        st.markdown(f"""
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 20px;">
+                    <span class="swing-icon" style="font-size: 28px; margin-right: 10px;">🛒</span>
+                    <strong>Análise de Performance: Vendas Walmart:</strong> 
+                </li>
+            </ul>
+        """, unsafe_allow_html=True)
         st.image("https://eu-images.contentstack.com/v3/assets/blt58a1f8f560a1ab0e/blt2043a8ed80a75292/693b270fc6eb9d7f0dded72a/Walmart_exterior.webp?width=1280&auto=webp&quality=80&disable=upscale", 
             width=200,
             use_container_width=True)
@@ -571,7 +585,14 @@ with aba_ds:
 
     # Repita para Rossmann, Churn e Olist...
     with st.container():
-        st.subheader("📈 Forecast de Vendas: Redes Rossmann com Machine Learning")
+        st.markdown(f"""
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 20px;">
+                    <span class="swing-icon" style="font-size: 28px; margin-right: 10px;">📈</span>
+                    <strong>Forecast de Vendas: Redes Rossmann com Machine Learning:</strong> 
+                </li>
+            </ul>
+        """, unsafe_allow_html=True)
         st.image("https://sopotcentrum.com.pl/images/shopsPhotos/img_42_DSC_0111.jpg", 
             width=200,
             use_container_width=True)
@@ -599,7 +620,14 @@ with aba_ds:
     st.divider()
 
     with st.container():
-        st.subheader("📉 Previsão de Churn: IBM Telco com Machine Learning")
+        st.markdown(f"""
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 20px;">
+                    <span class="swing-icon" style="font-size: 28px; margin-right: 10px;">📉</span>
+                    <strong>Previsão de Churn: IBM Telco com Machine Learning:</strong> 
+                </li>
+            </ul>
+        """, unsafe_allow_html=True)
         st.image("https://www.frontline-consultancy.com/wp-content/uploads/2025/07/AdobeStock_1496894737_Editorial_Use_Only-scaled.jpeg", 
             width=200,
             use_container_width=True)
@@ -627,7 +655,14 @@ with aba_ds:
     st.divider()
 
     with st.container():
-        st.subheader("💰 Elasticidade de Preço: Olist E-commerce")
+        st.markdown(f"""
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 20px;">
+                    <span class="swing-icon" style="font-size: 28px; margin-right: 10px;">💰</span>
+                    <strong>Elasticidade de Preço: Olist E-commerce:</strong> 
+                </li>
+            </ul>
+        """, unsafe_allow_html=True)
         st.image("https://mercadoeconsumo.com.br/wp-content/uploads/2021/04/olist-divulgalcao.jpg", 
             width=200,
             use_container_width=True)
@@ -658,23 +693,23 @@ with aba_ds:
 
 with aba_pbi:
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
-    st.title("📊 Projetos em Power BI")
+    st.markdown("""
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="swing-icon" style="font-size: 36px;">📊</span>
+            <h1 style="margin: 0;">Projetos em Power BI</h1>
+        </div>
+    """, unsafe_allow_html=True)
     st.write("""
         Sou um profissional que trabalha com Power BI a mais de 5 anos, nesta sessão tratei projetos de estudo na ferramenta. Contudo, atuamente estou focado em desenvolver estudos de Data Science e Python, portanto trarei alguns projetos aqui posteriormente.
             
         Por hora compartilho um PDF e as imagens abaixo, trazendo algums projetos desenvolvidos em âmbito de trabalho real."""
     )
-    st.markdown("</div>", unsafe_allow_html=True)
-
     html_cases = f"""
     <div class="hero-cta" style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
         {link_cases}
     </div>
     """.replace('\n', '').strip()
     st.markdown(html_cases, unsafe_allow_html=True)
-    
-    st.markdown("</div>", unsafe_allow_html=True)
-
     imagens = [
         "pbi_projetos_imagens/Slide1.PNG",
         "pbi_projetos_imagens/Slide2.PNG",
@@ -701,7 +736,12 @@ with aba_pbi:
 
 with aba_portais:
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
-    st.title("⚙️ Projetos de Portais de Gestão")
+    st.markdown("""
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="swing-icon" style="font-size: 36px;">⚙️</span>
+            <h1 style="margin: 0;">Projetos de Portais de Gestão</h1>
+        </div>
+    """, unsafe_allow_html=True)
     st.markdown("""
         Na minha experiência profissional, notei que muitas rotinas da área de BI ainda carecem de automação. 
         Uma solução extremamente eficiente que entendi fazer sentido é a **criação de portais customizados** com Python e Streamlit.
@@ -730,8 +770,12 @@ with aba_portais:
 
 with aba_contato:
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
-    
-    st.title("📩 Vamos conversar?")
+    st.markdown("""
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="swing-icon" style="font-size: 36px;">📩</span>
+            <h1 style="margin: 0;">Vamos conversar?</h1>
+        </div>
+    """, unsafe_allow_html=True)
     st.markdown("""
     Se você tem interesse em discutir projetos de dados, oportunidades de colaboração 
     ou quer trocar ideias e experiências, sinta-se à vontade para se conectar comigo!
