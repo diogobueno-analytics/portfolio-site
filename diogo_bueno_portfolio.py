@@ -43,7 +43,7 @@ def img_to_base64(img_path):
 # Caminho relativo ao arquivo .py
 img_path = Path(__file__).parent / "imagem_pessoal_completa_melhorada.png"
 img_base64 = img_to_base64(img_path)
-
+st.write("versão:", st.__version__)
 # Markdown configurando classes CSS
 st.markdown("""
 <style>
