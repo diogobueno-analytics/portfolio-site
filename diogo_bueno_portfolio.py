@@ -107,7 +107,9 @@ div[data-testid="stTabs"] [role="tablist"] {
     gap: 0px !important;
 }
 
-button[data-baseweb="tab"] {
+button[role="tab"],
+button[data-baseweb="tab"],
+button[data-testid="stTab"] {
     border-radius: 40px !important;
     padding: 8px 12px !important;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -117,24 +119,32 @@ button[data-baseweb="tab"] {
     margin: 0 2px !important;
 }
 
-button[data-baseweb="tab"] p {
+button[role="tab"] p,
+button[data-baseweb="tab"] p,
+button[data-testid="stTab"] p {
     font-size: 16px !important;
     margin: 0 !important;
     line-height: 1 !important;
     color: #FFFFFF !important;
 }
 
-button[data-baseweb="tab"][aria-selected="true"] {
+button[role="tab"][aria-selected="true"],
+button[data-baseweb="tab"][aria-selected="true"],
+button[data-testid="stTab"][aria-selected="true"] {
     background-color: #BF9969 !important;
     box-shadow: 0 4px 15px rgba(191, 153, 105, 0.3) !important;
 }
 
-button[data-baseweb="tab"][aria-selected="true"] p {
+button[role="tab"][aria-selected="true"] p,
+button[data-baseweb="tab"][aria-selected="true"] p,
+button[data-testid="stTab"][aria-selected="true"] p {
     color: #FFFFFF !important;
     font-weight: bold !important;
 }
 
-button[data-baseweb="tab"]:hover {
+button[role="tab"]:hover,
+button[data-baseweb="tab"]:hover,
+button[data-testid="stTab"]:hover {
     background-color: rgba(191, 153, 105, 0.3) !important;
     transform: translateY(-2px) !important;
 }
