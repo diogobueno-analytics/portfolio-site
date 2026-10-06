@@ -593,7 +593,7 @@ with aba_ds:
                 </li>
             </ul>
         """, unsafe_allow_html=True)
-        st.image("https://sopotcentrum.com.pl/images/shopsPhotos/img_42_DSC_0111.jpg", 
+        st.image("https://ocdn.eu/pulscms/MDA_/5788af2692d00e01d52770b95279f2b9.jpg", 
             width=200,
             use_container_width=True)
         st.write("Desenvolvimento de um modelo de séries temporais para prever o faturamento de mais de 3.000 farmácias.")
